@@ -1,0 +1,300 @@
+.header{
+	background:url(./images/head-back.png);
+}
+
+.header .title{
+	background: url(./images/title-back.png);
+	background-size:100%  100%;
+    width: 30%;
+	height: 100%;
+	text-align: center;
+	margin: 0 auto;
+	font-size: 20px;
+	font-family:"Heiti";
+	font-weight: 700;
+	letter-spacing:3px;
+	float: left;
+	
+}
+
+.header .shadow {
+	color:#1ecdf4;
+	text-shadow: 
+    -1px -1px 1px #557BB0,
+    2px 2px 1px #363636;
+}
+
+.header .menu{
+    width: 10%;
+	height: 100%;
+	float: left;
+}
+
+.header .dayinfo,.header .userinfo{
+    width: 15%;
+	height: 100%;
+	float: left;
+}
+
+
+.header .dayinfo span{
+	color: #00F7FF;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.header .dayinfo span:nth-child(1){
+ border-right: 1px solid #00F7FF;
+ margin-left: 20px;
+}
+
+.header .menu a{
+    display: block;
+    background: url(./images/top-menu.png) no-repeat;
+    width: 100px;
+    margin: 20px auto;
+    text-align: center;
+    line-height: 25px;
+    color: #4586D4;
+}
+
+.header .menu.active a{
+	background: url(./images/top-menu1.png) no-repeat;
+	color: #00FEFF;
+}
+
+.header .menu.active span{
+	background: url(./images/Mask.png) no-repeat;
+	width:24px;
+	height: 22px;
+	display: block;
+	margin-left: 35px;
+}
+
+.header .userinfo .list{
+	background: url(./images/icon.png) no-repeat;
+	width: 30px;
+	height: 30px;
+	background-position: -3px -3px;
+	margin-top: 20px;
+}
+
+.header .userinfo .user{
+	background: url(./images/icon.png) no-repeat;
+	width: 30px;
+	height: 30px;
+	background-position: -35px -3px;
+	margin: 20px;
+}
+
+
+.left,.right,.center-bottom{
+	background: transparent;
+	overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.main .left ul li{
+	height: 50px;
+	line-height: 50px;
+	background: url(./images/left-back.png) no-repeat;
+	background-size:100% 100%;
+	margin: 20px;
+}
+
+.main .left ul li i,.main .right ul li i{
+	background: url(./images/icon1.png) no-repeat;
+	width:30px;
+	height: 30px;	
+	display: inline-block;
+	float:left;
+    margin: 10px;
+}
+
+.main .left ul li i.icon1{
+    background-position: -5px -5px;
+}
+
+.main .left ul li i.icon2{
+    background-position: -35px -5px;
+}
+
+.main .left ul li i.icon3{
+    background-position: -65px -5px;
+}
+
+.main .left ul li i.icon4{
+    background-position: -100px -5px;
+}
+
+.main .left ul li i.icon5{
+    background-position: -5px -38px;
+}
+.main .left ul li i.icon6{
+    background-position: -35px -38px;
+}
+
+.main .left ul li i.icon7{
+    background-position: -68px -38px;
+}
+
+.main .left ul li i.icon8{
+    background-position: -100px -38px;
+}
+
+.main .left ul li i.icon9{
+    background-position: -5px -68px;
+}
+
+.main .left ul li i.icon10{
+    background-position: -35px -68px;
+}
+
+.main .left ul li i.icon11{
+    background-position: -65px -68px;
+}
+
+.main .left ul li i.icon12{
+    background-position: -100px -68px;
+}
+
+.main .left ul li span:nth-child(2){
+	color:#80E1FF;
+}
+.main .left ul li span:nth-child(3){
+	color:#07E9FF;
+	float: right;
+	margin-right: 20px;
+}
+
+.main .right ul li{
+	height: 100px;
+	background: url(./images/right-back.png) no-repeat;
+	background-size:100% 100%;
+	margin: 20px;
+	color:#5E8BCE;
+}
+
+.main .right ul li p{
+	height: 50px;
+	line-height: 50px;
+}
+
+.main .right ul li i{
+	width: 40px;
+	height: 40px;
+	margin: 5px;
+}
+
+.main .right ul li .fr{
+  font-size: 12px;
+  margin-right: 5px;
+}
+
+
+.main .right ul li .fr i{
+	background: url(./images/icon.png) no-repeat;
+	float: right;
+	height: 30px;
+	cursor: pointer;
+}
+
+.main .right ul li .zd-icon i{
+	background-position: -5 -36;
+}
+
+.main .right ul li .sd-icon i{
+	background-position: -48 -36;
+}
+
+.main .right ul li i.icon1{
+	background-position: -5px -100px;
+}
+
+.main .right ul li i.icon2{
+	background-position: -42px -100px;
+}
+
+.main .right ul li i.icon3{
+	background-position: -78px -100px;
+}
+
+.main .right ul li i.icon4{
+	background-position: -116px -100px;
+}
+
+.main .right ul li i.icon5{
+	background-position: -5px -135px;
+}
+
+
+.main .right ul li i.icon6{
+	background-position: -42px -135px;
+}
+
+.main .right ul li i.icon7{
+	background-position: -78px -135px;
+}
+
+
+
+.main .right ul li .bottom{
+	font-size: 12px;
+	margin-left: 10px;
+}
+
+.main .right ul li .bottom i{
+	float: right;
+	background: url(./images/icon.png) no-repeat;
+	width: 30px;
+	height: 30px;
+	margin-top: 10px;
+	cursor: pointer;
+}
+
+.main .right ul li .open i{
+	background-position: -8 -70;
+}
+
+.main .right ul li .close i{
+	background-position: -48 -70;
+}
+
+.main .right ul li .setting i{
+	background-position: -68px -3px;
+}
+
+.main .center-bottom{
+	padding: 20px 0;
+}
+
+.main .center-bottom >div{
+	margin-left:20px;
+}
+
+.main .center-bottom a{
+	width:33.3%;
+	height: 45px;
+	line-height: 45px;
+	display: block;
+	float: left;
+	color:#FFF;
+	margin-top: 20px;
+}
+
+.main .center-bottom a>div{
+	background-color:rgba(10,157,188,0.1);
+	margin-right: 20px;
+}
+
+.main .center-bottom a .video{
+ width:45px;
+ height: 45px;
+ background-color:rgba(10,157,188,0.2);
+ background-image: url(./images/video.png);
+ background-repeat: no-repeat;
+ background-position: 10px 10px;
+ display: inline-block;
+ float: left;
+ margin-right: 10px;
+}
