@@ -65,8 +65,8 @@ input, select, textarea {
     width: 100%;
     float: left;
     height:auto;
-    /* min-height: 350px;
-    min-width: 1100px; */
+    min-width: 1100px;
+    /* min-height: 350px; */
     overflow: hidden;
 }
 
