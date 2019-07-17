@@ -104,7 +104,7 @@
 	background: linear-gradient(270deg,rgba(62,228,251,0) 0%,rgba(29,196,246,0.11) 100%);
 }
 
-.main .left ul li i,.main .right ul li i{
+.main .left ul li i,.main .right ul li i,.chart-page p i{
 	background: url(./images/icon1.png) no-repeat;
 	width:30px;
 	height: 30px;	
@@ -113,50 +113,50 @@
     margin: 10px;
 }
 
-.main .left ul li i.icon1{
+.main .left ul li i.icon1,.chart-page .icon1 i{
     background-position: -5px -5px;
 }
 
-.main .left ul li i.icon2{
+.main .left ul li i.icon2,.chart-page .icon2 i{
     background-position: -35px -5px;
 }
 
-.main .left ul li i.icon3{
+.main .left ul li i.icon3,.chart-page .icon3 i{
     background-position: -65px -5px;
 }
 
-.main .left ul li i.icon4{
+.main .left ul li i.icon4,.chart-page .icon4 i{
     background-position: -100px -5px;
 }
 
-.main .left ul li i.icon5{
+.main .left ul li i.icon5,.chart-page .icon5 i{
     background-position: -5px -38px;
 }
-.main .left ul li i.icon6{
+.main .left ul li i.icon6,.chart-page .icon6 i{
     background-position: -35px -38px;
 }
 
-.main .left ul li i.icon7{
+.main .left ul li i.icon7,.chart-page .icon7 i{
     background-position: -68px -38px;
 }
 
-.main .left ul li i.icon8{
+.main .left ul li i.icon8,.chart-page .icon8 i{
     background-position: -100px -38px;
 }
 
-.main .left ul li i.icon9{
+.main .left ul li i.icon9,.chart-page .icon9 i{
     background-position: -5px -68px;
 }
 
-.main .left ul li i.icon10{
+.main .left ul li i.icon10,.chart-page .icon10{
     background-position: -35px -68px;
 }
 
-.main .left ul li i.icon11{
-    background-position: -65px -68px;
+.main .left ul li i.icon11,.chart-page .icon11{
+    background-position: -68px -68px;
 }
 
-.main .left ul li i.icon12{
+.main .left ul li i.icon12,.chart-page .icon12{
     background-position: -100px -68px;
 }
 
@@ -310,4 +310,68 @@
  display: inline-block;
  float: left;
  margin-right: 10px;
+}
+
+.chart-page p{
+	height: 50px;
+	line-height: 50px;
+    font-size: 12px;
+}
+
+.chart-page p i{
+	margin-right: 5px;
+}
+
+.chart-page .icon1 {
+  color:#4DBDBA;
+}
+
+.chart-page .icon2 {
+	color:#D5CD05;
+}
+
+.chart-page .icon3 {
+	color:#FF820A;
+}
+
+
+.chart-page .icon4 {
+color:#5CFF00;
+}
+
+.chart-page .icon5 {
+	color:#53B2F9;
+}
+
+.chart-page .icon6 {
+	color:#33B4FF;
+}
+
+.chart-page .icon7 {
+	color:#FF4343;
+}
+
+.chart-page .icon8 {
+	color:#42ADFF;
+}
+
+.chart-page .icon9 {
+	color:#4DBDBA;
+}
+
+
+.chart-page .icon5 {
+	color:#53B2F9;
+}
+
+.chart-page .npk{
+	color:#80E1FF;
+}
+
+.chart-page .npk i{
+	margin-left: 0;
+}
+
+.chart-page i.icon10{
+	margin-left: 10px;
 }

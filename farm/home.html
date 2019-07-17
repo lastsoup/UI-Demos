@@ -3,6 +3,10 @@
     <title>智慧茶园</title>
     <link href="css/base.css" rel="stylesheet" type="text/css" />
     <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="https://libs.baidu.com/jquery/2.1.2/jquery.min.js"></script>
+    <!-- <script type="text/javascript" src="http://res.layui.com/layui/release/layer/dist/layer.js?v=3111"></script> -->
+    <script type="text/javascript" src="http://212.64.80.101:8081/file/js/layer.js"></script>
+    <link href="css/dialog.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
         <div class="page">
@@ -10,8 +14,8 @@
                     <div class="dayinfo">
                         <span>2019.07.15</span><span>晴</span>
                     </div>
-                    <div class="menu active"><a href="javascript:;">主画面<span></span></a></div>
-                    <div class="menu"><a href="javascript:;">实时曲线<span></span></a></div>
+                    <div class="menu active"><a href="home.html">主画面<span></span></a></div>
+                    <div class="menu"><a href="chart.html">实时曲线<span></span></a></div>
                     <div class="title shadow">天王戴庄智慧茶园控制系统</div>
                     <div class="menu"><a href="javascript:;">历史曲线<span></span></a></div>
                     <div class="menu"><a href="javascript:;">报警记录<span></span></a></div>
@@ -47,7 +51,7 @@
                                     <li>
                                         <p><i class="icon2"></i><span>湿帘</span><span class="fr zd-icon">自动<i></i></span></p>
                                         <div class="line"></div>
-                                        <p><span class="bottom setting">湿度 < 30 、 温度 > 30<i></i></span></p>
+                                        <p><span class="bottom setting">湿度 < 30 、 温度 > 30<i id="btn-setting"></i></span></p>
                                     </li>
                                     <li>
                                         <p><i class="icon3"></i><span>风机</span><span class="fr sd-icon">手动<i></i></span></p>
@@ -80,7 +84,7 @@
                             <div class="center-top"></div>
                             <div class="center-bottom">
                                 <div>
-                                    <a href="javascript:;"><div><i class="video"></i>外墙监视器-2号监视器</div></a>
+                                    <a href="javascript:;" id="btn-video"><div><i class="video"></i>外墙监视器-2号监视器</div></a>
                                     <a href="javascript:;"><div><i class="video"></i>外墙监视器-2号监视器</div></a>
                                     <a href="javascript:;"><div><i class="video"></i>外墙监视器-2号监视器</div></a>
                                 </div>
@@ -93,6 +97,63 @@
                         </div>
                 </div>
         </div>
+        <div id="showvideo" >
+                <video 
+                id="myPlayer"
+                style
+                src="http://hls01open.ys7.com/openlive/12d9d34bb78648f2a7d32b732d3ee945.hd.m3u8"
+                controls
+                playsInline 
+                webkit-playsinline>
+              </video>
+              <ul>
+                  <li class="active"><i></i>1号监视器</li>
+                  <li><i></i>1号监视器</li>
+                  <li><i></i>1号监视器</li>
+                  <li><i></i>1号监视器</li>
+                  <li><i></i>1号监视器</li>
+                  <li><i></i>1号监视器</li>
+              </ul>
+        </div>
+        <div id="showsetting">
+              <ul> 
+                  <li class="detail">
+                      <p class="name">条件1</p>
+                      <p class="cstext"><span>参数</span><span>></span><span>数值</span></p>
+                      <p class="csdown"><input type="text" placeholder="请输入参数" /></p>
+                      <p class="csif"><span class="active">&gt;</span><span>&ge;</span><span>&lt;</span><span>&le;</span><span>=</span><span>&ne;</span></p>
+                      <p class="csvalue"><input type="text" placeholder="请输入数值" /></p>
+                  </li>
+                  <li class="new">
+                     <a href="javascript:;"></a>
+                     <span>点击添加条件</span>
+                  </li>
+              </ul>
+        </div>
+<script>
+$("#btn-video").click(function(){
+layer.open({
+  type:1,
+  fix:false,
+  title:"监控视频",
+  area : "820px",
+  skin: 'farm-dialog noscroll',
+  content: $('#showvideo')
+});
+});
+
+$("#btn-setting").click(function(){
+layer.open({
+  type:1,
+  title:"风机自动设置",
+  area : "660px",
+  skin: 'farm-dialog',
+  btn: ['取消', '确定'],
+  content: $('#showsetting')
+});
+});
+
+</script>
 </body>
 </html>
 

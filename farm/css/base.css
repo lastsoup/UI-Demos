@@ -70,6 +70,7 @@ input, select, textarea {
     overflow: hidden;
 }
 
+
 .left {
     width:280px;
     height: 100%;
@@ -103,4 +104,68 @@ input, select, textarea {
     height: 150px;
     background: blue;
     width: 100%;
+}
+
+.chart-page{
+    min-height: 550px; 
+    margin-top: 20px;
+}
+
+.chart-page .left{
+    float: left;
+    width: 25%;
+    overflow: hidden;
+}
+
+.chart-page .left .cell{
+    margin: 0 20px;
+    height: 33.3%;
+    position: relative;
+}
+.chart-page .l1 .cell{
+    margin-right: 0;
+}
+
+.chart-page .left .cell .panel{
+    /* background-color: rgba(10,157,188,0.1); */
+    background: url(./images/cell-bg.png) no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    top: 0;
+    bottom: 20px;
+    width: 100%;
+}
+
+.chart-page .right{
+    float: left;
+    width: 50%;
+}
+
+.chart-page .right .top{
+    height: 33.33%;
+}
+
+.chart-page .right  .cell{
+    width: 50%;
+    height: 100%;
+    float: left;
+    position: relative;
+}
+
+.chart-page .right .cell .panel{
+    background: url(./images/cell-bg.png) no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    top: 0;
+    bottom: 20px;
+    left: 0;
+    right: 20px;
+}
+
+.chart-page .right .bottom{
+    height: 66.66%;
+}
+
+.chart-page .right .bottom .cell{
+    width:100%;
 }

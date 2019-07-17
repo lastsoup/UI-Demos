@@ -1,5 +1,25 @@
 
-
+    /* <div class="dayinfo">
+    <a  class="weatherpic" target="_blank" href="http://php.weather.sina.com.cn/search.php?city=南京">
+        <div class="icon qing">
+        <div class="cloud"></div>
+        <div class="cloud"></div>
+        <div class="sun">
+            <div class="rays"></div>
+        </div>
+        <div class="rain"></div>
+        <div class="lightning">
+            <div class="bolt"></div>
+            <div class="bolt"></div>
+        </div>
+        <div class="snow">
+            <div class="flake"></div>
+            <div class="flake"></div>
+        </div>
+        </div>
+        </a>
+        <div class="weathertext"><i>24℃～31℃</i><i>晴</i></div>
+</div> */
 /* 天气 START */
 .weathertext{
     font-size: 12px;
