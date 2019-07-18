@@ -72,21 +72,21 @@ input, select, textarea {
 
 
 .left {
-    width:280px;
+    width:300px;
     height: 100%;
     background: green;
     float: left;
 }
 
 .right {
-    width: 280px;
+    width: 300px;
     height: 100%;
     background: red;
     float: right;
 }
 
 .center {
-    margin:0 280px; 
+    margin:0 300px; 
     height: 100%;
     position: relative;
 }
@@ -128,7 +128,7 @@ input, select, textarea {
 
 .chart-page .left .cell .panel{
     /* background-color: rgba(10,157,188,0.1); */
-    background: url(./images/cell-bg.png) no-repeat;
+    background: url(./images/cell-bg-small.png) no-repeat;
     background-size: 100% 100%;
     position: absolute;
     top: 0;
@@ -153,7 +153,7 @@ input, select, textarea {
 }
 
 .chart-page .right .cell .panel{
-    background: url(./images/cell-bg.png) no-repeat;
+    background: url(./images/cell-bg-small.png) no-repeat;
     background-size: 100% 100%;
     position: absolute;
     top: 0;
@@ -168,4 +168,60 @@ input, select, textarea {
 
 .chart-page .right .bottom .cell{
     width:100%;
+}
+
+.chart-page .right .bottom .cell .panel{
+    background: url(./images/cell-bg.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.chart-page .right .fsu,.chart-page .right .fxiang{
+ height: 50%;
+ position: relative;
+}
+
+.chart-page .chart-body{
+    position: absolute;
+    top: 40px;
+    bottom: 0;
+    width: 100%;
+}
+
+.warn-page .right{
+    width:100%;
+}
+
+.warn-page .right .top {
+    height: 40%;
+}
+
+.warn-page .right .bottom {
+    height:60%;
+}
+
+.warn-page .right .cell .panel{
+   left:20px;
+}
+
+.warn-page .right .total .panel{
+    background: url(./images/cell-total.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.warn-page .right .bottom .cell .panel{
+    background: url(./images/cell-warn.png) no-repeat;
+    background-size: 100% 100%; 
+}
+
+.warn-page .right .sehzhi .panel{
+    left:0px;
+    background: url(./images/cell-shezhi.png) no-repeat;
+    background-size: 100% 100%;
+}
+.warn-page .right .sehzhi {
+    width:30%;
+}
+
+.warn-page .right .total {
+    width:70%;
 }

@@ -4,6 +4,7 @@
     <link href="css/base.css" rel="stylesheet" type="text/css" />
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="https://libs.baidu.com/jquery/2.1.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
 </head>
 <body>
     <div class="page">
@@ -15,7 +16,7 @@
                 <div class="menu active"><a href="chart.html">实时曲线<span></span></a></div>
                 <div class="title shadow">天王戴庄智慧茶园控制系统</div>
                 <div class="menu"><a href="javascript:;">历史曲线<span></span></a></div>
-                <div class="menu"><a href="javascript:;">报警记录<span></span></a></div>
+                <div class="menu"><a href="warn.html">报警记录<span></span></a></div>
                 <div class="userinfo">
                     <a class="user fr" href="javascript:;"></a>
                     <a class="list fr" href="javascript:;"></a>
@@ -26,53 +27,308 @@
                    <div class="cell">
                        <div class="panel icon1">
                           <p><i></i>温度 / ℃</p>
+                          <div class="chart-body">
+                                <div id="chart1" style="width:100%;height:100%"></div>
+                          </div>
                         </div>
                     </div>
                    <div class="cell"><div class="panel icon4">
                         <p><i></i>降雨量 / mm</p>
+                        <div class="chart-body">
+                                <div id="chart2" style="width:100%;height:100%"></div>
+                        </div>
                       </div>
                   </div>
                   <div class="cell"><div class="panel icon6">
                         <p><i></i>CO2浓度 / ppm</p>
+                        <div class="chart-body">
+                                <div id="chart3" style="width:100%;height:100%"></div>
+                        </div>
                       </div>
                   </div>
                 </div>
                 <div class="left">
                     <div class="cell"><div class="panel icon2">
                         <p><i></i>湿度 / %</p>
+                        <div class="chart-body">
+                                <div id="chart4" style="width:100%;height:100%"></div>
+                        </div>
                         </div>
                      </div>
                      <div class="cell"><div class="panel icon7">
                         <p><i></i>光照强度 / lux</p>
+                        <div class="chart-body">
+                                <div id="chart5" style="width:100%;height:100%"></div>
+                        </div>
                         </div>
                      </div>
                      <div class="cell"><div class="panel icon8">
                          <p><i></i>土壤湿度 / %</p>
+                         <div class="chart-body">
+                                <div id="chart6" style="width:100%;height:100%"></div>
+                         </div>
                          </div>
                     </div>
                 </div>
                 <div class="right">
                     <div class="top">
-                            <div class="cell"><div class="panel icon3">
+                            <div class="cell">
+                           <div class="panel icon3">
                                     <p><i></i>EC值 / ms/cm</p>
+                                    <div class="chart-body">
+                                            <div id="chart7" style="width:100%;height:100%"></div>
                                     </div>
+                               </div>
                             </div>
-                            <div class="cell"><div class="panel">
-                                    <p class="icon5"><i></i>风速 / m/s</p>
-                                    <p class="icon9"><i></i>风向</p>
+                            <div class="cell">
+                                <div class="panel">
+                                    <div style="width: 40%;float:left;">
+                                        <div class="fsu"> <p class="icon5"><i></i>风速 / m/s</p>
+                                            <span><i>23.25</i></span>
+                                        </div>
+                                        <div class="fxiang"> <p class="icon9"><i></i>风向</p>
+                                            <span><i>北偏东44°</i></span>
+                                        </div>
+                                    </div>
+                                    <div class="compass">
+                                        <div class="zuobiao"></div>
+                                        <div class="arrow"></div>
+                                    </div>
                                 </div>
                             </div>
                     </div>
                     <div class="bottom">
                             <div class="cell"><div class="panel npk">
                                     <p><i class="icon10"></i><i class="icon11"></i><i class="icon12"></i>氮磷钾 / ug/c㎡</p>
+                                    <p class="npktext">
+                                        <span><i>土壤氮含量</i><i class="text n">300.23</i></span>
+                                        <span><i>土壤磷含量</i><i class="text p">239.67</i></span>
+                                        <span><i>土壤钾含量</i><i class="text k">239.67</i></span>
+                                    </p>
+                                    <div class="chart-body">
+                                            <div id="chart8" style="width:100%;height:100%"></div>
+                                     </div>
                               </div>
                             </div>
                     </div>
-                </div>s
+                </div>
             </div>
     </div>
 </body>
+<script>
+
+function getChartOption(options){
+    var defaults={
+        tooltipbg:'rgba(77,189,186,0.85)',
+        xdata:['周一','周二','周三','周四','周五','周六','周日'],
+        axiscolor:'#357398',
+        labelcolor:'#357398',
+        series:[{
+        name:"温度",
+        linecolor:"#4DBDBA",
+        areabg:'rgba(0,0,0,0)',
+        smooth:true,
+        seriesdata:[0, 6,12, 6,12, 6,12]
+        }]
+    }
+    options = $.extend({},defaults, options);
+    var settings = {
+        tooltip : {
+            trigger: 'axis',
+            backgroundColor: options.tooltipbg,
+            padding:10,
+            axisPointer: {
+                type: 'cross',
+                label: {
+                    backgroundColor: options.tooltipbg
+                }
+            }
+        },
+        animation:true,
+        grid: {
+            left: '30px',
+            right: '20px',
+            top: '10px',
+            bottom: '30px'
+        },
+        xAxis : [
+            {
+                type : 'category',
+                boundaryGap : false,
+                data : options.xdata,
+                axisLine:{
+                    lineStyle:{
+                        color:options.axiscolor //更改坐标轴颜色
+                    }
+                },
+                axisLabel: {
+                show: true,
+                    textStyle: {
+                        color: options.labelcolor  //更改坐标轴文字颜色
+                    }
+                }
+            }
+        ],
+        yAxis : [
+            {
+                type : 'value',
+                splitLine:{
+                    show:false
+                },
+                axisLine:{
+                    lineStyle:{
+                        color:options.axiscolor //更改坐标轴颜色
+                    }
+                },
+                axisLabel: {
+                show: true,
+                    textStyle: {
+                    color: options.lablecolor  //更改坐标轴文字颜色
+                    }
+                }
+            }
+        ],
+        series : []
+    };
+  $.each(options.series,function(){
+    var seriesObj= {
+                name:this.name,
+                type:'line',
+                smooth:this.smooth,
+                itemStyle : { 
+                normal : { 
+                color:'#fff',//改变折线点的颜色
+                lineStyle:{ color:this.linecolor,width:1} }
+                },
+                areaStyle: {normal: {
+                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                        offset: 0,
+                        color: this.areabg
+                    }, {
+                        offset: 1,
+                        color: 'rgba(0,0,0,0)'
+                    }]),
+                }},
+                data:this.seriesdata
+           }
+           settings.series.push(seriesObj);
+  })
+  
+  return settings;
+}
+var myChart1= echarts.init(document.getElementById('chart1'),'light');
+var myChart2= echarts.init(document.getElementById('chart2'),'light');
+var myChart3= echarts.init(document.getElementById('chart3'),'light');
+var myChart4= echarts.init(document.getElementById('chart4'),'light');
+var myChart5= echarts.init(document.getElementById('chart5'),'light');
+var myChart6= echarts.init(document.getElementById('chart6'),'light');
+var myChart7= echarts.init(document.getElementById('chart7'),'light');
+var myChart8= echarts.init(document.getElementById('chart8'),'light');
+var option1=getChartOption();
+var option2=getChartOption({
+        tooltipbg:'rgba(50,138,0,0.85)',
+        series:[{
+            name:"降雨量",
+            linecolor:"#5CFF00",
+            areabg:'rgba(93,255,0,0.31)',
+            smooth:true,
+            seriesdata:[12, 8,6, 8,10, 11,2]
+        }]
+});
+var option3=getChartOption({
+        tooltipbg:'rgba(7,114,176,0.85)',
+        series:[{
+            name:"二氧化碳浓度",
+            linecolor:"#33B4FF",
+            areabg:'rgba(0,0,0,0)',
+            smooth:true,
+            seriesdata:[1, 1,12, 1,12, 6,12]
+        }]
+});
+var option4=getChartOption({
+        tooltipbg:'rgba(213,205,5,0.85)',
+        series:[{
+            name:"湿度",
+            linecolor:"#D5CD05",
+            areabg:'rgba(255,245,0,0.31)',
+            smooth:true,
+            seriesdata:[12, 1,12, 1,12, 6,12]
+        }]
+});
+var option5=getChartOption({
+        tooltipbg:'rgba(255,67,67,0.85)',
+        series:[{
+            name:"光照强度",
+            linecolor:"#FF4343",
+            areabg:'rgba(255,67,67,0.31)',
+            smooth:true,
+            seriesdata:[12, 1,12, 1,12,8,12]
+        }]
+});
+var option6=getChartOption({
+        tooltipbg:'rgba(66,173,255,0.85)',
+        series:[{
+            name:"土壤湿度",
+            linecolor:"#42ADFF",
+            areabg:'rgba(66,173,255,0.31)',
+            smooth:false,
+            seriesdata:[12, 1,12, 1,1, 6,0]
+        }]
+});
+var option7=getChartOption({
+        tooltipbg:'rgba(255,130,10,0.85)',
+        series:[{
+            name:"EC值",
+            linecolor:"#FF820A",
+            areabg:'rgba(255,130,10,0.31)',
+            smooth:true,
+            seriesdata:[8, 11,12, 1,1, 8,0]
+        }]
+});
+var option8=getChartOption({
+        tooltipbg:'rgba(0,145,189,0.85)',
+        series:[{
+            name:"氮含量",
+            linecolor:"#4098FF",
+            areabg:'rgba(0,0,0,0)',
+            smooth:true,
+            seriesdata:[8, 11,12, 1,1, 8,0]
+        },
+        {
+            name:"磷含量",
+            linecolor:"#9C5AFF",
+            areabg:'rgba(0,0,0,0)',
+            smooth:true,
+            seriesdata:[0, 5,7, 1,4, 8,12]
+        },
+        {
+            name:"钾含量",
+            linecolor:"#FF4848",
+            areabg:'rgba(0,0,0,0)',
+            smooth:true,
+            seriesdata:[1, 5,7, 1,4, 8,12]
+        }
+        ]
+});
+myChart1.setOption(option1);
+myChart2.setOption(option2);
+myChart3.setOption(option3);
+myChart4.setOption(option4);
+myChart5.setOption(option5);
+myChart6.setOption(option6);
+myChart7.setOption(option7);
+myChart8.setOption(option8);
+window.addEventListener("resize",function(){
+     myChart1.resize();
+     myChart2.resize();
+     myChart3.resize();
+     myChart4.resize();
+     myChart5.resize();
+     myChart6.resize();
+     myChart7.resize();
+     myChart8.resize();
+ });
+</script>
 </html>
 
 

@@ -104,7 +104,7 @@
 	background: linear-gradient(270deg,rgba(62,228,251,0) 0%,rgba(29,196,246,0.11) 100%);
 }
 
-.main .left ul li i,.main .right ul li i,.chart-page p i{
+.main .left ul li i,.main .right ul li i,.chart-page p>i{
 	background: url(./images/icon1.png) no-repeat;
 	width:30px;
 	height: 30px;	
@@ -252,7 +252,7 @@
 	margin-left: 10px;
 }
 
-.main .right ul li .bottom i{
+.main .right ul li .bottom i,.warn-page .right .sehzhi  .detail li i{
 	float: right;
 	background: url(./images/icon.png) no-repeat;
 	width: 30px;
@@ -269,7 +269,7 @@
 	background-position: -48 -70;
 }
 
-.main .right ul li .setting i{
+.main .right ul li .setting i,.warn-page .right .sehzhi  .detail li i{
 	background-position: -68px -3px;
 }
 
@@ -374,4 +374,203 @@ color:#5CFF00;
 
 .chart-page i.icon10{
 	margin-left: 10px;
+}
+
+.chart-page .right .fsu p,.chart-page .right .fxiang p{
+    height: 30px;
+}
+
+.chart-page .right .fxiang p{
+    line-height: 30px;
+}
+
+.chart-page .right .fsu span,.chart-page .right .fxiang span{
+    width: 100%;
+    display: block;
+    text-align: center;
+    background:rgba(0,145,189,0.1);
+    font-size: 20px;
+    position: absolute;
+    top: 45px;
+    bottom: 15px;
+    left: 20px;
+	min-height: 26px;
+	display: flex;
+	align-items:center;
+    justify-content:center;
+}
+.chart-page .icon9 i{
+    margin-top: 0;
+}
+
+.chart-page .right .fsu span i,.chart-page .right .fxiang span i{
+    font-style: normal;
+}
+
+.chart-page .right .fsu span{
+	color:#53B2F9;
+}
+
+.chart-page .right .fxiang span{
+	color:#4DBDBA;
+	top: 35px;
+}
+
+.chart-page .right .compass{
+	width:50%;
+	height: 100%;
+	float: right;
+	position: relative;
+}
+
+.chart-page .right .compass .zuobiao{
+  position: absolute;
+  left:10px;
+  right:10px;
+  top:10px;
+  bottom:10px;
+  background: url(./images/zuobiao.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+.chart-page .right .compass .arrow{
+	position: absolute;
+	left:10px;
+	right:6px;
+	top:10px;
+	bottom:10px;
+	background: url(./images/fxiang.png) no-repeat;
+	background-position: center center;
+  }
+
+.chart-page .right .bottom .npktext span{
+    display: inline-block;
+    padding: 10px;
+    background: rgba(0,145,189,0.1);
+	margin-left: 20px;
+	min-width: 100px;
+}
+
+.chart-page .right .bottom .npktext span i{
+   font-style: normal;
+   display: block;
+   height: 25px;
+   line-height: 25px;
+}
+
+.chart-page .right .bottom .npktext span .text{
+	font-size: 20px;
+}
+
+.chart-page .right .bottom .npktext span .n{
+	color:#4098FF;
+}
+
+.chart-page .right .bottom .npktext span .p{
+	color:#9248FF;
+}
+
+.chart-page .right .bottom .npktext span .k{
+	color:#FF4848;
+}
+
+.chart-page .right .bottom .chart-body{
+	top: 130px;
+}
+
+.warn-page p{
+	color:#33B4FF;
+	font-size: 15px;
+    padding: 0 20px;
+}
+
+.warn-page .right .total  .text{
+    width: 20%;
+    color: #D3CB04;
+    font-size: 58px;
+    position: absolute;
+    top: 10px;
+	bottom: 0px;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.warn-page .right .total  .text:before {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 70%;
+    width: 1px;
+    background: #2B6183;
+    margin-left: 50%;
+}
+
+.warn-page .right .total  .detail{
+    width: 80%;
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+	left: 20%;
+}
+
+.warn-page .right .total  .detail li{
+	width:10%;
+	height: 50%;
+	margin: 0;
+	background: none;
+	display: flex;
+    align-items: center;
+	justify-content: center;
+	float: left;
+	color:#357398;
+	flex-direction:column;
+}
+
+.warn-page .right .total  .detail li span:nth-child(1){
+	font-size: 30px;
+}
+
+.warn-page .right .total  .detail li span:nth-child(2){
+	font-size: 12px;
+}
+
+.warn-page .right .total  .detail li .normal{
+  color:#4FFFEA;
+}
+
+.warn-page .right .total  .detail li .warning{
+	color:#FF4848;
+}
+
+.warn-page .right .sehzhi  .detail{
+	position: absolute;
+	top: 50px;
+    bottom: 20px;
+    width: 100%;
+	overflow: auto;
+
+}
+
+.warn-page .right .sehzhi  .detail li{
+    background: none;
+    margin: 0;
+    padding: 0;
+	height: 45px;
+	line-height: 45px;
+	border-bottom: 1px solid #0F496B;
+	margin: 0 10px;
+	padding: 0 10px;
+}
+
+.warn-page .right .sehzhi  .detail li span:nth-child(1){
+	color:#33B4FF;
+}
+
+.warn-page .right .sehzhi  .detail li span:nth-child(2){
+	color:#357398
+}
+
+.warn-page .right .sehzhi  .detail li i{
+    width: 20px;
 }
