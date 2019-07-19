@@ -9,13 +9,31 @@
 <body>
     <div class="page">
             <div class="header">
-                <div class="dayinfo">
-                    <span>2019.07.15</span><span>晴</span>
-                </div>
+                    <div class="dayinfo">
+                            <a  class="weatherpic" target="_blank" href="http://php.weather.sina.com.cn/search.php?city=南京">
+                                <div class="icon qing">
+                                <div class="cloud"></div>
+                                <div class="cloud"></div>
+                                <div class="sun">
+                                    <div class="rays"></div>
+                                </div>
+                                <div class="rain"></div>
+                                <div class="lightning">
+                                    <div class="bolt"></div>
+                                    <div class="bolt"></div>
+                                </div>
+                                <div class="snow">
+                                    <div class="flake"></div>
+                                    <div class="flake"></div>
+                                </div>
+                                </div>
+                                </a>
+                                <div class="weathertext"><i>24℃～31℃</i> &nbsp;<i>晴</i></div>
+                        </div>
                 <div class="menu"><a href="home.html">主画面<span></span></a></div>
                 <div class="menu active"><a href="chart.html">实时曲线<span></span></a></div>
                 <div class="title shadow">天王戴庄智慧茶园控制系统</div>
-                <div class="menu"><a href="javascript:;">历史曲线<span></span></a></div>
+                <div class="menu"><a href="history.html">历史曲线<span></span></a></div>
                 <div class="menu"><a href="warn.html">报警记录<span></span></a></div>
                 <div class="userinfo">
                     <a class="user fr" href="javascript:;"></a>
@@ -92,7 +110,7 @@
                                     </div>
                                     <div class="compass">
                                         <div class="zuobiao"></div>
-                                        <div class="arrow"></div>
+                                        <div class="arrow" style="transform: rotate(44deg);"></div>
                                     </div>
                                 </div>
                             </div>
@@ -116,11 +134,11 @@
     </div>
 </body>
 <script>
-
-function getChartOption(options){
+    function getChartOption(options){
     var defaults={
         tooltipbg:'rgba(77,189,186,0.85)',
         xdata:['周一','周二','周三','周四','周五','周六','周日'],
+        legend:[],
         axiscolor:'#357398',
         labelcolor:'#357398',
         series:[{
@@ -143,6 +161,13 @@ function getChartOption(options){
                     backgroundColor: options.tooltipbg
                 }
             }
+        },
+        legend: {
+           data: options.legend,
+           textStyle:{
+              color: options.axiscolor
+           },
+
         },
         animation:true,
         grid: {
@@ -195,9 +220,10 @@ function getChartOption(options){
                 name:this.name,
                 type:'line',
                 smooth:this.smooth,
+                symbol:"none",
                 itemStyle : { 
                 normal : { 
-                color:'#fff',//改变折线点的颜色
+                color:this.linecolor,//改变折线点的颜色
                 lineStyle:{ color:this.linecolor,width:1} }
                 },
                 areaStyle: {normal: {
@@ -219,6 +245,7 @@ function getChartOption(options){
   
   return settings;
 }
+
 var myChart1= echarts.init(document.getElementById('chart1'),'light');
 var myChart2= echarts.init(document.getElementById('chart2'),'light');
 var myChart3= echarts.init(document.getElementById('chart3'),'light');
@@ -290,6 +317,7 @@ var option7=getChartOption({
 });
 var option8=getChartOption({
         tooltipbg:'rgba(0,145,189,0.85)',
+        legend:["氮含量","磷含量","钾含量"],
         series:[{
             name:"氮含量",
             linecolor:"#4098FF",

@@ -95,10 +95,14 @@
 #showsetting ul li{
 	background:rgba(29,64,93,1);
 	width:288px;
-	height:237px;
+	height:260px;
 	float: left;
 	margin: 0 20px 20px 0;
 	text-align: center;
+}
+
+#showsetting .warn{
+	height:237px;
 }
 
 #showsetting ul li.detail p{
@@ -145,8 +149,18 @@
 	height:60px;
 }
 
+#showsetting ul li.detail .state{
+	height: 30px;
+	line-height: 20px;
+	color: #2F6998;
+}
 
-#showsetting ul li.detail input{
+#showsetting ul li.detail .state span{
+	display: inline-block;
+    width: 60px;
+}
+
+#showsetting ul li.detail input[type=text]{
 	width:240px;
 	height:30px;
 	margin-top: 15px;
@@ -155,7 +169,7 @@
 	color:#fff;
 }
 
-#showsetting ul li.detail input::-webkit-input-placeholder
+#showsetting ul li.detail input[type=text]::-webkit-input-placeholder
 {
 	color:#2F6998;
 }
@@ -174,3 +188,5 @@
 	margin-bottom: 10px;
 	border: 1px #ddd dashed;
 }
+
+

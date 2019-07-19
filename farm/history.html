@@ -39,75 +39,33 @@
                 <div class="menu"><a href="home.html">主画面<span></span></a></div>
                 <div class="menu"><a href="chart.html">实时曲线<span></span></a></div>
                 <div class="title shadow">天王戴庄智慧茶园控制系统</div>
-                <div class="menu"><a href="history.html">历史曲线<span></span></a></div>
-                <div class="menu active"><a href="warn.html">报警记录<span></span></a></div>
+                <div class="menu active"><a href="history.html">历史曲线<span></span></a></div>
+                <div class="menu"><a href="warn.html">报警记录<span></span></a></div>
                 <div class="userinfo">
                     <a class="user fr" href="javascript:;"></a>
                     <a class="list fr" href="javascript:;"></a>
                 </div>
             </div>
-            <div class="main chart-page warn-page">
+            <div class="main chart-page warn-page history-page">
                     <div class="right">
-                            <div class="top">
-                                    <div class="cell total">
-                                        <div class="panel">
-                                          <p>今日报警总数</p>
-                                          <div class="text">19</div>
-                                            <ul class="detail">
-                                                <li><span>0</span><span>温度</span></li>
-                                                <li><span class="normal">2</span><span>湿度</span></li>
-                                                <li><span>0</span><span>EC值</span></li>
-                                                <li><span class="warning">19</span><span>降雨量</span></li>
-                                                <li><span>0</span><span>CO2浓度</span></li>
-                                                <li><span>0</span><span>光照强度</span></li>
-                                                <li><span>0</span><span>土壤湿度</span></li>
-                                                <li><span>0</span><span>土壤氮含量</span></li>
-                                                <li><span>0</span><span>土壤磷含量</span></li>
-                                                <li><span>0</span><span>土壤钾含量</span></li>
-                                                <li><span>0</span><span>天窗</span></li>
-                                                <li><span>0</span><span>湿帘</span></li>
-                                                <li><span>0</span><span>风机</span></li>
-                                                <li><span>0</span><span>LED灯</span></li>
-                                                <li><span>0</span><span>遮阳网(内)</span></li>
-                                                <li><span>0</span><span>遮阳网(外)</span></li>
-                                                <li><span>0</span><span>滴灌</span></li>
-                                            </ul>
-                                       </div>
-                                    </div>
-                                    <div class="cell sehzhi">
-                                         <div class="panel">
-                                           <p>报警设置</p>
-                                           <ul class="detail">
-                                             <li><span>温度：</span><span>温度>30</span><i id="btn-setting"></i></li>
-                                             <li><span>温度：</span><span>温度>30</span><i></i></li>
-                                             <li><span>温度：</span><span>温度>30</span><i></i></li>
-                                           </ul>
-                                         </div>
-                                    </div>
-                            </div>
                             <div class="bottom">
                                     <div class="cell">
                                      <div class="panel">
-                                            <p>报警记录</p>
                                             <div class="warn-area">
-                                              <div class="warn-canshu">
-                                                <span class="name">参数：</span>
-                                                <select style="width:80%;" id="demo-select2-multiple-selects" multiple="multiple">   
-                                                    <option value="WD">温度</option>
-                                                    <option value="SD">湿度</option>
-                                                    <option value="EC">EC值</option>
-                                                    <option value="JY:">降雨量</option>
-                                                    <option value="CO2">CO2浓度</option>
-                                                    <option value="GZ">光照强度</option>
-                                                    <option value="TRSZ">土壤湿度</option>
-                                                    <option value="TRN">土壤氮含量</option>
-                                                    <option value="TRP">土壤磷含量</option>
-                                                    <option value="TRK">土壤钾含量</option>
-                                                 </select>
-                                                </div>
                                                 <div class="date-type">
+                                                        <span class="name">查询参数：</span>
+                                                        <select id="select-name">   
+                                                            <option value="WD">温度</option>
+                                                            <option value="SD">湿度</option>
+                                                            <option value="EC">EC值</option>
+                                                            <option value="JY:">降雨量</option>
+                                                            <option value="CO2">CO2浓度</option>
+                                                            <option value="GZ">光照强度</option>
+                                                            <option value="TRSZ">土壤湿度</option>
+                                                            <option value="TRNPK">土壤氮磷钾含量</option>
+                                                         </select>
                                                     <span>时间类型：</span>
-                                                    <select id="demo-select2-selects" style="display: none;">
+                                                    <select id="select-date">
                                                         <option value="year">年</option>
                                                         <option value="month">月</option>
                                                         <option value="day">日</option>
@@ -116,10 +74,10 @@
                                                     <span>时间段：</span>
                                                     <div class="input-daterange input-group" id="datepicker">
                                                         <input type="text" class="form-control" autocomplete="off" name="start" />
-                                                         &nbsp;至 &nbsp;
+                                                        &nbsp;&nbsp; &nbsp;至 &nbsp; &nbsp; &nbsp;
                                                         <input type="text" class="form-control" autocomplete="off" name="end" />
                                                     </div>
-                                                    <input type="button" class="btn-search"/>
+                                                    <input type="button" class="btn-search" value="" />
                                                 </div>
                                             </div>
                                             <div class="chart-body">
@@ -145,6 +103,8 @@
   </div>
 </body>
 <script>
+     $("#select-name").select2({minimumResultsForSearch: -1});
+     $("#select-date").select2({minimumResultsForSearch: -1});
   $("#btn-setting").click(function(){
   layer.open({
     type:1,
@@ -155,8 +115,6 @@
     content: $('#showsetting')
   });
   });
-  $("#demo-select2-multiple-selects").select2();
-   $("#demo-select2-selects").select2({minimumResultsForSearch: -1});
    $('.input-daterange').datepicker({
         format: "yyyy-mm-dd",
         todayBtn: "linked",
@@ -284,21 +242,21 @@ var option8=getChartOption({
             linecolor:"#4098FF",
             areabg:'rgba(0,0,0,0)',
             smooth:true,
-            seriesdata:[1, 11,12, 1,1, 8,0]
+            seriesdata:[8, 11,12, 1,1, 8,0]
         },
         {
             name:"磷含量",
             linecolor:"#9C5AFF",
             areabg:'rgba(0,0,0,0)',
             smooth:true,
-            seriesdata:[1, 5,7, 1,4, 8,12]
+            seriesdata:[0, 5,7, 1,4, 8,12]
         },
         {
             name:"钾含量",
             linecolor:"#FF4848",
             areabg:'rgba(0,0,0,0)',
             smooth:true,
-            seriesdata:[12, 5,7, 1,4, 8,12]
+            seriesdata:[1, 5,7, 1,4, 8,12]
         }
         ]
 });

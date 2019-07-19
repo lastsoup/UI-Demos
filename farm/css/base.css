@@ -2,14 +2,19 @@
     margin: 0;
     padding: 0;
     font-family:'Microsoft YaHei';
+    font-size: 12px;
 }
 
 html,body {
-    font-size: 14px;
     border: 0;
     width:100%;
     height: 100%;
     background: url(./images/back.png);
+}
+
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
 }
 
 a
@@ -41,6 +46,37 @@ input, select, textarea {
     outline: 0;
 }
 
+input[type="radio"] + label::before {
+    content: "\a0"; /*不换行空格*/
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 18px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 1px solid #5187b3;
+    margin-right: 10px;
+    margin-top: -2px;
+    cursor: pointer;
+}
+
+input[type="radio"]:checked + label::before {
+    background-color: #0dbdf2;
+    background-clip: content-box;
+    border: 1px solid #0dbdf2;
+    padding: 3px;
+    width: 9px;
+    height: 9px;
+}
+
+input[type="radio"]:checked+label{
+   color:#0DBDF2;
+}
+
+input[type="radio"] {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+}
 
 .fl{float: left;}
 .fr{float: right;}
@@ -225,3 +261,355 @@ input, select, textarea {
 .warn-page .right .total {
     width:70%;
 }
+
+.history-page .right .bottom{
+    height: 100%;
+}
+
+
+
+
+/* 天气 START */
+.weathertext{
+    font-size: 12px;
+    margin-left: 90px;
+}
+
+.weathertext i{
+    font-style: normal;
+}
+.weatherpic {
+    z-index: 1;
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    line-height: 70px;
+    position: absolute;
+    margin-left: 20px;
+}
+
+.weatherpic .icon {
+    position: relative;
+    display: inline-block;
+	font-size: 7px;
+	margin-top: 35px;
+    -webkit-transform: scale(0.65);
+}
+
+.cloud:nth-child(2) {
+    display: none
+}
+
+.yin .lightning,.yin .snow,.yin .rain {
+    display: none
+}
+
+.yin .sun {
+    margin: -2.8em -0em
+}
+
+.lei .sun,.lei .rain,.lei .snow {
+    display: none
+}
+
+.lei .cloud {
+    margin-top: -3em
+}
+
+.yun .sun,.yun .rain,.yun .snow,.yun .lightning {
+    display: none
+}
+
+.yun .cloud:nth-child(2) {
+    display: block
+}
+
+.xue .sun,.xue .rain,.xue .lightning {
+    display: none
+}
+
+.xue .cloud {
+    margin-top: -3.2em
+}
+
+.xue .snow {
+    margin-top: -0.9em
+}
+
+.qing .rain,.qing .lightning,.qing .cloud,.qing .snow {
+    display: none
+}
+
+.yu .lightning,.yu .snow,.yu .sun {
+    display: none
+}
+
+.yu .cloud {
+    margin-top: -3.2em
+}
+
+.cloud {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    width: 3.6875em;
+    height: 3.6875em;
+    margin: -1.84375em;
+    background: currentColor;
+    border-radius: 50%;
+    box-shadow: -2.1875em .6875em 0 -0.6875em,2.0625em .9375em 0 -0.9375em,0 0 0 .375em #00FEFF,-2.1875em .6875em 0 -0.3125em #00FEFF,2.0625em .9375em 0 -0.5625em #00FEFF;
+    color: #00FEFF;
+}
+
+.cloud:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -0.5em;
+    display: block;
+    width: 4.5625em;
+    height: 1em;
+    background: currentColor;
+    box-shadow: 0 .4375em 0 -0.0625em #00FEFF
+}
+
+.cloud:nth-child(2) {
+    z-index: 0;
+    background: #00FEFF;
+    box-shadow: -2.1875em .6875em 0 -0.6875em #00FEFF,2.0625em .9375em 0 -0.9375em #00FEFF,0 0 0 .375em #00FEFF,-2.1875em .6875em 0 -0.3125em #00FEFF,2.0625em .9375em 0 -0.5625em #00FEFF;
+    opacity: .3;
+    transform: scale(0.5) translate(6em,-3em);
+    animation: cloud 4s linear infinite
+}
+
+.cloud:nth-child(2):after {
+    background: #00FEFF
+}
+
+.sun {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2.5em;
+    height: 2.5em;
+    margin: -1.25em;
+    background: currentColor;
+    border-radius: 50%;
+    box-shadow: 0 0 0 .375em #00FEFF;
+    animation: spin 12s infinite linear;
+    color: transparent
+}
+
+.rays {
+    position: absolute;
+    top: -2em;
+    left: 50%;
+    display: block;
+    width: .375em;
+    height: 1.125em;
+    margin-left: -0.1875em;
+    background: #00FEFF;
+    border-radius: .25em;
+    box-shadow: 0 5.375em #00FEFF
+}
+
+.rays:before,.rays:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: .375em;
+    height: 1.125em;
+    transform: rotate(60deg);
+    transform-origin: 50% 3.25em;
+    background: #00FEFF;
+    border-radius: .25em;
+    box-shadow: 0 5.375em #00FEFF
+}
+
+.rays:before {
+    transform: rotate(120deg)
+}
+
+.rain,.lightning,.snow {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    width: 3.75em;
+    height: 3.75em;
+    margin: .375em 0 0 -2em;
+    background: currentColor;
+    color: transparent
+}
+
+.rain:after {
+    content: '';
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    width: 1.125em;
+    height: 1.125em;
+    margin: -1em 0 0 -0.25em;
+    background: #0cf;
+    border-radius: 100% 0 60% 50% / 60% 0 100% 50%;
+    box-shadow: .625em .875em 0 -0.125em rgba(255,255,255,0.2),-0.875em 1.125em 0 -0.125em rgba(255,255,255,0.2),-1.375em -0.125em 0 rgba(255,255,255,0.2);
+    transform: rotate(-28deg);
+    animation: rain 3s linear infinite
+}
+
+.bolt {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -0.25em 0 0 -0.125em;
+    color: #00FEFF;
+    opacity: .3;
+    animation: lightning 2s linear infinite
+}
+
+.bolt:nth-child(2) {
+    width: .5em;
+    height: .25em;
+    margin: -1.75em 0 0 -1.875em;
+    transform: translate(2.5em,2.25em);
+    opacity: .2;
+    animation: lightning 1.5s linear infinite
+}
+
+.bolt:before,.bolt:after {
+    content: '';
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    margin: -1.625em 0 0 -1.0125em;
+    border-top: 1.25em solid transparent;
+    border-right: .75em solid;
+    border-bottom: .75em solid;
+    border-left: .5em solid transparent;
+    transform: skewX(-10deg)
+}
+
+.bolt:after {
+    margin: -0.25em 0 0 -0.25em;
+    border-top: .75em solid;
+    border-right: .5em solid transparent;
+    border-bottom: 1.25em solid transparent;
+    border-left: .75em solid;
+    transform: skewX(-10deg)
+}
+
+.bolt:nth-child(2):before {
+    margin: -0.75em 0 0 -0.5em;
+    border-top: .625em solid transparent;
+    border-right: .375em solid;
+    border-bottom: .375em solid;
+    border-left: .25em solid transparent
+}
+
+.bolt:nth-child(2):after {
+    margin: -0.125em 0 0 -0.125em;
+    border-top: .375em solid;
+    border-right: .25em solid transparent;
+    border-bottom: .625em solid transparent;
+    border-left: .375em solid
+}
+
+.flake:before,.flake:after {
+    content: '\2744';
+    position: absolute;
+    left: 50%;
+    margin: -1.025em 0 0 -1.0125em;
+    color: #00FEFF;
+    list-height: 1em;
+    opacity: .2;
+    animation: spin 8s linear infinite reverse
+}
+
+.flake:after {
+    margin: .125em 0 0 -1em;
+    font-size: 1.5em;
+    opacity: .4;
+    animation: spin 14s linear infinite
+}
+
+.flake:nth-child(2):before {
+    margin: -0.5em 0 0 .25em;
+    font-size: 1.25em;
+    opacity: .2;
+    animation: spin 10s linear infinite
+}
+
+.flake:nth-child(2):after {
+    margin: .375em 0 0 .125em;
+    font-size: 2em;
+    opacity: .4;
+    animation: spin 16s linear infinite reverse
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes cloud {
+    0% {
+        opacity: 0
+    }
+
+    50% {
+        opacity: .3
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0.5) translate(-200%,-3em)
+    }
+}
+
+@keyframes rain {
+    0% {
+        background: #0cf;
+        box-shadow: .625em .875em 0 -0.125em rgba(255,255,255,0.2),-0.875em 1.125em 0 -0.125em rgba(255,255,255,0.2),-1.375em -0.125em 0 #0cf
+    }
+
+    25% {
+        box-shadow: .625em .875em 0 -0.125em rgba(255,255,255,0.2),-0.875em 1.125em 0 -0.125em #0cf,-1.375em -0.125em 0 rgba(255,255,255,0.2)
+    }
+
+    50% {
+        background: rgba(255,255,255,0.3);
+        box-shadow: .625em .875em 0 -0.125em #0cf,-0.875em 1.125em 0 -0.125em rgba(255,255,255,0.2),-1.375em -0.125em 0 rgba(255,255,255,0.2)
+    }
+
+    100% {
+        box-shadow: .625em .875em 0 -0.125em rgba(255,255,255,0.2),-0.875em 1.125em 0 -0.125em rgba(255,255,255,0.2),-1.375em -0.125em 0 #0cf
+    }
+}
+
+@keyframes lightning {
+    45% {
+        color: #00FEFF;
+        background: #00FEFF;
+        opacity: .2
+    }
+
+    50% {
+        color: #0cf;
+        background: #0cf;
+        opacity: 1
+    }
+
+    55% {
+        color: #00FEFF;
+        background: #00FEFF;
+        opacity: .2
+    }
+}
+/* 天气 END */
+

@@ -4,20 +4,37 @@
     <link href="css/base.css" rel="stylesheet" type="text/css" />
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="https://libs.baidu.com/jquery/2.1.2/jquery.min.js"></script>
-    <!-- <script type="text/javascript" src="http://res.layui.com/layui/release/layer/dist/layer.js?v=3111"></script> -->
     <script type="text/javascript" src="http://212.64.80.101:8081/file/js/layer.js"></script>
     <link href="css/dialog.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
         <div class="page">
                 <div class="header">
-                    <div class="dayinfo">
-                        <span>2019.07.15</span><span>晴</span>
-                    </div>
+                        <div class="dayinfo">
+                                <a  class="weatherpic" target="_blank" href="http://php.weather.sina.com.cn/search.php?city=南京">
+                                    <div class="icon qing">
+                                    <div class="cloud"></div>
+                                    <div class="cloud"></div>
+                                    <div class="sun">
+                                        <div class="rays"></div>
+                                    </div>
+                                    <div class="rain"></div>
+                                    <div class="lightning">
+                                        <div class="bolt"></div>
+                                        <div class="bolt"></div>
+                                    </div>
+                                    <div class="snow">
+                                        <div class="flake"></div>
+                                        <div class="flake"></div>
+                                    </div>
+                                    </div>
+                                    </a>
+                                    <div class="weathertext"><i>24℃～31℃</i> &nbsp;<i>晴</i></div>
+                            </div>
                     <div class="menu active"><a href="home.html">主画面<span></span></a></div>
                     <div class="menu"><a href="chart.html">实时曲线<span></span></a></div>
                     <div class="title shadow">天王戴庄智慧茶园控制系统</div>
-                    <div class="menu"><a href="javascript:;">历史曲线<span></span></a></div>
+                    <div class="menu"><a href="history.html">历史曲线<span></span></a></div>
                     <div class="menu"><a href="warn.html">报警记录<span></span></a></div>
                     <div class="userinfo">
                         <a class="user fr" href="javascript:;"></a>
@@ -123,6 +140,13 @@
                       <p class="csdown"><input type="text" placeholder="请输入参数" /></p>
                       <p class="csif"><span class="active">&gt;</span><span>&ge;</span><span>&lt;</span><span>&le;</span><span>=</span><span>&ne;</span></p>
                       <p class="csvalue"><input type="text" placeholder="请输入数值" /></p>
+                      <p class="state">
+                            <input type="radio" id="fj-open" name="state" checked />
+                            <label for="fj-open">风机开启</label>
+                            <span></span>
+                            <input type="radio" id="fj-close" name="state" />
+                            <label for="fj-close">风机关闭</label>
+                      </p>
                   </li>
                   <li class="new">
                      <a href="javascript:;"></a>
