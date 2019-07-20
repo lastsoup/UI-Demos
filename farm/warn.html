@@ -34,7 +34,10 @@
                                 </div>
                                 </div>
                                 </a>
-                                <div class="weathertext"><i>24℃～31℃</i> &nbsp;<i>晴</i></div>
+                                <div class="weathertext">
+                                        <p class="city">句容</p>
+                                        <p><i>24℃～31℃</i> &nbsp;<i>晴</i></p>
+                                    </div>
                         </div>
                 <div class="menu"><a href="home.html">主画面<span></span></a></div>
                 <div class="menu"><a href="chart.html">实时曲线<span></span></a></div>
@@ -79,8 +82,8 @@
                                            <p>报警设置</p>
                                            <ul class="detail">
                                              <li><span>温度：</span><span>温度>30</span><i id="btn-setting"></i></li>
-                                             <li><span>温度：</span><span>温度>30</span><i></i></li>
-                                             <li><span>温度：</span><span>温度>30</span><i></i></li>
+                                             <li><span>湿度：</span><span>湿度>10</span><i></i></li>
+                                             <li><span>降雨量：</span><span>降雨量>20</span><i></i></li>
                                            </ul>
                                          </div>
                                     </div>
@@ -116,7 +119,7 @@
                                                     <span>时间段：</span>
                                                     <div class="input-daterange input-group" id="datepicker">
                                                         <input type="text" class="form-control" autocomplete="off" name="start" />
-                                                         &nbsp;至 &nbsp;
+                                                        <span style="margin: 0 10px;">至 </span>
                                                         <input type="text" class="form-control" autocomplete="off" name="end" />
                                                     </div>
                                                     <input type="button" class="btn-search"/>

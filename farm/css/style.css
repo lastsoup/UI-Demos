@@ -577,7 +577,8 @@ color:#5CFF00;
 .warn-page .right .sehzhi  .detail li span:nth-child(2){
 	color:#357398;
 	font-size:12px;
-	margin-left: 20px;
+	position: absolute;
+    left: 80px;
 }
 
 .warn-page .right .sehzhi  .detail li i{
@@ -642,8 +643,9 @@ color:#5CFF00;
 	font-size: 12px;
 	background-image: url(./images/date.png);
 	background-repeat: no-repeat;
-	background-position: 130px;
+	background-position: 125px;
 	text-align: left;
+	vertical-align: middle;
 }
 
 .warn-page .right .bottom .chart-body {

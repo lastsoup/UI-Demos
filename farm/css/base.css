@@ -266,15 +266,26 @@ input[type="radio"] {
     height: 100%;
 }
 
-
+.table-condensed{
+    width:250px;
+}
 
 
 /* 天气 START */
 .weathertext{
     font-size: 12px;
-    margin-left: 90px;
+    margin-left: 75px;
+    margin-top: 15px;
+}
+.weathertext p{
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
 }
 
+.weathertext .city{
+   font-size: 15px;
+}
 .weathertext i{
     font-style: normal;
 }
