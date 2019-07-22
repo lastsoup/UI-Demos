@@ -5,6 +5,7 @@
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="https://libs.baidu.com/jquery/2.1.2/jquery.min.js"></script>
     <script type="text/javascript" src="js/layer/layer.js"></script>
+    <script type="text/javascript" src="js/jquery.slimscroll.min.js"></script>
     <link href="css/dialog.css" rel="stylesheet" type="text/css" />
     <link href="ui.css" rel="stylesheet" type="text/css" />
 </head>
@@ -68,47 +69,102 @@
                                         <p><i class="icon1"></i><span>天窗</span>
                                             <span class="fr zd-icon">自动
                                                     <span class="pull-right">
-                                                            <input id="demo-online-status-checkbox" class="toggle-switch auto-switch" type="checkbox" checked>
-                                                            <label for="demo-online-status-checkbox"></label>
+                                                            <input id="checkbox1" class="toggle-switch auto-switch" type="checkbox" checked>
+                                                            <label for="checkbox1"></label>
                                                     </span>
                                             </span></p>
                                         <div class="line"></div>
                                         <p><span class="bottom close">关
                                                 <span class="pull-right">
-                                                        <input id="demo-online-status-checkbox1" class="toggle-v-switch small-switch" type="checkbox">
-                                                        <label for="demo-online-status-checkbox1"></label>
+                                                        <input id="small-checkbox1" class="toggle-v-switch small-switch" type="checkbox" checked>
+                                                        <label for="small-checkbox1"></label>
                                                 </span>
                                         </span></p>
                                     </li>
                                     <li>
-                                        <p><i class="icon2"></i><span>湿帘</span><span class="fr zd-icon">自动<i></i></span></p>
+                                        <p><i class="icon2"></i><span>湿帘</span><span class="fr zd-icon">自动
+                                            <span class="pull-right">
+                                                <input id="checkbox2" class="toggle-switch auto-switch" type="checkbox" checked>
+                                                <label for="checkbox2"></label>
+                                        </span>
+                                        </span></p>
                                         <div class="line"></div>
                                         <p><span class="bottom setting">湿度 < 30 、 温度 > 30<i id="btn-setting"></i></span></p>
                                     </li>
                                     <li>
-                                        <p><i class="icon3"></i><span>风机</span><span class="fr sd-icon">手动<i></i></span></p>
+                                        <p><i class="icon3"></i><span>风机</span><span class="fr sd-icon">手动
+                                            <span class="pull-right">
+                                                <input id="checkbox3" class="toggle-switch auto-switch" type="checkbox" >
+                                                <label for="checkbox3"></label>
+                                            </span>
+                                        </span></p>
                                         <div class="line"></div>
-                                        <p><span class="bottom open">开<i></i></span></p>
+                                        <p><span class="bottom open">开
+                                            <span class="pull-right">
+                                                <input id="small-checkbox3" class="toggle-v-switch small-switch" type="checkbox">
+                                                <label for="small-checkbox3"></label>
+                                        </span>
+                                        </span></p>
                                     </li>
                                     <li>
-                                        <p><i class="icon4"></i><span>LED灯</span><span class="fr sd-icon">手动<i></i></span></p>
+                                        <p><i class="icon4"></i><span>LED灯</span><span class="fr sd-icon">手动
+                                            <span class="pull-right">
+                                                <input id="checkbox4" class="toggle-switch auto-switch" type="checkbox" >
+                                                <label for="checkbox4"></label>
+                                            </span>
+                                        </span></p>
                                         <div class="line"></div>
-                                        <p><span class="bottom open">开<i></i></span></p>
+                                        <p><span class="bottom open">开
+                                            <span class="pull-right">
+                                                <input id="small-checkbox4" class="toggle-v-switch small-switch" type="checkbox">
+                                                <label for="small-checkbox4"></label>
+                                        </span>
+                                        </span></p>
                                     </li>
                                     <li>
-                                        <p><i class="icon5"></i><span>遮阳网（内）</span><span class="fr sd-icon">手动<i></i></span></p>
+                                        <p><i class="icon5"></i><span>遮阳网（内）</span><span class="fr sd-icon">手动
+                                            <span class="pull-right">
+                                                <input id="checkbox5" class="toggle-switch auto-switch" type="checkbox" >
+                                                <label for="checkbox5"></label>
+                                            </span>
+                                        </span></p>
                                         <div class="line"></div>
-                                        <p><span class="bottom open">开<i></i></span></p>
+                                        <p><span class="bottom open">开
+                                            <span class="pull-right">
+                                                <input id="small-checkbox5" class="toggle-v-switch small-switch" type="checkbox">
+                                                <label for="small-checkbox5"></label>
+                                        </span>
+                                        </span></p>
                                     </li>
                                     <li>
-                                        <p><i class="icon6"></i><span>遮阳网（外）</span><span class="fr sd-icon">手动<i></i></span></p>
+                                        <p><i class="icon6"></i><span>遮阳网（外）</span><span class="fr sd-icon">手动
+                                            <span class="pull-right">
+                                                <input id="checkbox6" class="toggle-switch auto-switch" type="checkbox" >
+                                                <label for="checkbox6"></label>
+                                            </span>
+                                        </span></p>
                                         <div class="line"></div>
-                                        <p><span class="bottom open">开<i></i></span></p>
+                                        <p><span class="bottom open">开
+                                            <span class="pull-right">
+                                                <input id="small-checkbox6" class="toggle-v-switch small-switch" type="checkbox">
+                                                <label for="small-checkbox6"></label>
+                                        </span>
+                                        </span></p>
                                     </li>
                                     <li>
-                                        <p><i class="icon7"></i><span>滴灌</span><span class="fr sd-icon">手动<i></i></span></p>
+                                        <p><i class="icon7"></i><span>滴灌</span><span class="fr sd-icon">手动
+                                            <span class="pull-right">
+                                                <input id="checkbox7" class="toggle-switch auto-switch" type="checkbox" >
+                                                <label for="checkbox7"></label>
+                                            </span>
+                                        </span></p>
                                         <div class="line"></div>
-                                        <p><span class="bottom open">开<i></i></span></p>
+                                        <p><span class="bottom open">开 
+                                            <span class="pull-right">
+                                                <input id="small-checkbox7" class="toggle-v-switch small-switch" type="checkbox">
+                                                <label for="small-checkbox7"></label>
+                                            </span>
+                                       </span></p>
                                     </li>
                                  </ul>
                         </div>
@@ -193,6 +249,30 @@ layer.open({
   content: $('#showsetting')
 });
 });
+
+var h=($(window).height() - $(".header").height()) + "px";
+$(".left").slimscroll({
+height: h,
+width:"300px",
+color: "#fff",
+wrapperClass: 'fl',
+size: "3px"
+});
+
+$(".right").slimscroll({
+height: h,
+width:"300px",
+color: "#fff",
+wrapperClass: 'fr',
+size: "3px"
+});
+
+window.addEventListener("resize",function(){
+    var h=($(window).height() - $(".header").height()) + "px";
+    $(".left").slimScroll({destroy: true}).height(h);
+    $(".right").slimScroll({destroy: true}).height(h);
+ });
+
 
 </script>
 </body>
