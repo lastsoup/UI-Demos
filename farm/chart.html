@@ -5,6 +5,7 @@
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="https://libs.baidu.com/jquery/2.1.2/jquery.min.js"></script>
     <script type="text/javascript" src="https://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+    <link href="ui.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <div class="page">
@@ -179,7 +180,7 @@
             top: '10px',
             bottom: '30px'
         },
-        xAxis : [
+        xAxis : 
             {
                 type : 'category',
                 boundaryGap : false,
@@ -196,8 +197,8 @@
                     }
                 }
             }
-        ],
-        yAxis : [
+        ,
+        yAxis : 
             {
                 type : 'value',
                 splitLine:{
@@ -215,7 +216,7 @@
                     }
                 }
             }
-        ],
+        ,
         series : []
     };
   $.each(options.series,function(){
@@ -248,6 +249,27 @@
   
   return settings;
 }
+
+function randomData() {
+    now = new Date(+now + oneDay);
+    value = value + Math.random() * 21 - 10;
+    return {
+        name: now.toString(),
+        value: [
+            [now.getFullYear(), now.getMonth() + 1, now.getDate()].join('/'),
+            Math.round(value)
+        ]
+    }
+}
+
+var data = [];
+var now = +new Date(1997, 9, 3);
+var oneDay = 24 * 3600 * 1000;
+var value = Math.random() * 1000;
+for (var i = 0; i < 1000; i++) {
+    data.push(randomData());
+}
+
 
 var myChart1= echarts.init(document.getElementById('chart1'),'light');
 var myChart2= echarts.init(document.getElementById('chart2'),'light');
@@ -285,7 +307,7 @@ var option4=getChartOption({
             linecolor:"#D5CD05",
             areabg:'rgba(255,245,0,0.31)',
             smooth:true,
-            seriesdata:[12, 1,12, 1,12, 6,12]
+            seriesdata:data
         }]
 });
 var option5=getChartOption({
@@ -347,6 +369,8 @@ var option8=getChartOption({
 myChart1.setOption(option1);
 myChart2.setOption(option2);
 myChart3.setOption(option3);
+option4.xAxis.type="time";
+option4.xAxis.splitLine={show: false};
 myChart4.setOption(option4);
 myChart5.setOption(option5);
 myChart6.setOption(option6);
@@ -362,6 +386,18 @@ window.addEventListener("resize",function(){
      myChart7.resize();
      myChart8.resize();
  });
+
+setInterval(function () {
+for (var i = 0; i < 5; i++) {
+    data.shift();
+    data.push(randomData());
+}
+myChart4.setOption({
+    series: [{
+        data: data
+    }]
+});
+}, 1000);
 </script>
 </html>
 

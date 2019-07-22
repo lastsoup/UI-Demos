@@ -591,7 +591,7 @@ color:#5CFF00;
 .warn-page .warn-area{
 	color: #357398;
 	margin-left: 170px;
-	margin-top: 10px;
+	margin-top: 15px;
 }
 
 .warn-page .warn-area .warn-canshu{
@@ -648,14 +648,28 @@ color:#5CFF00;
     top: 60px;
 }
 
-.warn-page .right .bottom .btn-search{
+.btn-search,.btn-mint:focus{
 	background-image: url(./images/search.png);
+	background-repeat: no-repeat;
+	background-position: center center;
     width: 32px;
     height: 32px;
     position: absolute;
 	right: 20px;
 	cursor: pointer;
+	border-radius: 3px;
+	background-color: #0F2844;
 }
+
+.btn-search:hover,.btn-search:active{
+    background-color: #174372;
+}
+
+.btn:not(.disabled):not(:disabled):active,.btn:not(.disabled):not(:disabled).active {
+    box-shadow: inset 0 2px 1px rgba(0,0,0,0.2)
+}
+
+
 
 .warn-page .warn-area .date-type>span.select2-container{
 	margin-left:0;
@@ -664,7 +678,7 @@ color:#5CFF00;
 
 .history-page .warn-area{
 	margin-left: 20px;
-	margin-top: 20px;
+	margin-top: 15px;
 }
 
 .history-page .right .bottom .chart-body {
@@ -674,5 +688,7 @@ color:#5CFF00;
 .history-page .warn-area .date-type select{
 	width:130px;
 }
+
+
 
 

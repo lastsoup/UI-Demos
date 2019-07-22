@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>效果演示</title>
+    <script type="text/javascript" src="./js/jquery-2.2.4.min.js"></script>
+    <!-- 支持 ES6 Promise 对象 -->
+    <link rel="stylesheet" href="./css/main.css">
+    <script type="text/javascript" src="./js/three.js"></script>
+    <script type="text/javascript" src="./js/OrbitControls.js"></script>
+    <!-- DAE模型 -->
+    <script type="text/javascript" src="./js/ColladaLoader.js"></script>
+    <script type="text/javascript" src="./js/dat.gui.min.js"></script>
+    <!-- 弹出框 -->
+    <link rel="stylesheet" href="./js/miniDialog/miniDialog.min.css">
+</head>
+<body>
+    <canvas id="renderCanvas"></canvas>
+    <script type="text/javascript" src="js/index.js"></script>
+    <!-- <script src="http://webmap2.map.bdimg.com/yyfm/jQuery_1.x/1.10.2/js/jQuery_1.x.min.js"></script> -->
+	<script src="./js/miniDialog/miniDialog.min.js"></script>
+    		<script>
+                 main.init();
+                 main.initModel();
+                var controls = new function () {
+                    //新操作
+                    this.棚顶开关=true;
+                    this.所有风扇=0;
+                    this.风扇1=0;
+                    this.风扇2=0;
+                    this.风扇3=0;
+                    this.风扇4=0;
+                    this.风扇4=0;
+                    this.查看监控 = function() {
+                        miniDialog({
+                            'title':'视频监控',
+                            'content':'<img style="width:100%;height:300px;" src="css/video.png" />',
+                            'width':500,
+                            'height':350,
+                            'mask':true,
+                            'closeX':true,
+                            "buttons":[]
+                        })
+				    }
+                };
+    
+                var gui = new dat.GUI();
+                var devcontrolGui=gui.addFolder('设备控制');
+                devcontrolGui.add(controls,"棚顶开关").onChange(function(e){
+                    var top=main.scene.getObjectByName("top");
+                    top.scale.set(e?1:0,1,1);
+                });
+                devcontrolGui.add(controls,'所有风扇',0,10).onChange(function(e){
+                    for(j = 0,len=main.elf.length; j < len; j++) {
+                        var obj=main.elf[j];
+                        obj.speed=e;
+                    }
+                });
+                devcontrolGui.add(controls,'风扇1',0,10).onChange(function(e){
+                    main.elf[0].speed=e;
+                });
+                devcontrolGui.add(controls,'风扇2',0,10).onChange(function(e){
+                    main.elf[1].speed=e;
+                });
+                devcontrolGui.add(controls,'风扇3',0,10).onChange(function(e){
+                    main.elf[2].speed=e;
+                });
+                devcontrolGui.add(controls,'风扇4',0,10).onChange(function(e){
+                    main.elf[3].speed=e;
+                });
+                
+                devcontrolGui.add(controls,"查看监控");
+                devcontrolGui.open();
+            </script>   
+</body>
+</html>

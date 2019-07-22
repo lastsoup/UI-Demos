@@ -6,6 +6,7 @@
     <script type="text/javascript" src="https://libs.baidu.com/jquery/2.1.2/jquery.min.js"></script>
     <script type="text/javascript" src="js/layer/layer.js"></script>
     <link href="css/dialog.css" rel="stylesheet" type="text/css" />
+    <link href="ui.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
         <div class="page">
@@ -64,9 +65,20 @@
                         <div class="right">
                                 <ul>
                                     <li>
-                                        <p><i class="icon1"></i><span>天窗</span><span class="fr zd-icon">自动<i></i></span></p>
+                                        <p><i class="icon1"></i><span>天窗</span>
+                                            <span class="fr zd-icon">自动
+                                                    <span class="pull-right">
+                                                            <input id="demo-online-status-checkbox" class="toggle-switch auto-switch" type="checkbox" checked>
+                                                            <label for="demo-online-status-checkbox"></label>
+                                                    </span>
+                                            </span></p>
                                         <div class="line"></div>
-                                        <p><span class="bottom close">关<i></i></span></p>
+                                        <p><span class="bottom close">关
+                                                <span class="pull-right">
+                                                        <input id="demo-online-status-checkbox1" class="toggle-v-switch small-switch" type="checkbox">
+                                                        <label for="demo-online-status-checkbox1"></label>
+                                                </span>
+                                        </span></p>
                                     </li>
                                     <li>
                                         <p><i class="icon2"></i><span>湿帘</span><span class="fr zd-icon">自动<i></i></span></p>
@@ -144,10 +156,10 @@
                       <p class="csif"><span class="active">&gt;</span><span>&ge;</span><span>&lt;</span><span>&le;</span><span>=</span><span>&ne;</span></p>
                       <p class="csvalue"><input type="text" placeholder="请输入数值" /></p>
                       <p class="state">
-                            <input type="radio" id="fj-open" name="state" checked />
+                            <input type="radio" id="fj-open" class="magic-radio" name="state" checked />
                             <label for="fj-open">风机开启</label>
                             <span></span>
-                            <input type="radio" id="fj-close" name="state" />
+                            <input type="radio" id="fj-close" class="magic-radio" name="state" />
                             <label for="fj-close">风机关闭</label>
                       </p>
                   </li>
@@ -158,6 +170,8 @@
               </ul>
         </div>
 <script>
+
+
 $("#btn-video").click(function(){
 layer.open({
   type:1,

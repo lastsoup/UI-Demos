@@ -215,12 +215,17 @@
 
 .magic-radio:checked+label{
    color:#0DBDF2;
+   cursor: pointer;
 }
 
 .magic-radio{
     display: none;
     position: absolute;
     clip: rect(0, 0, 0, 0);
+}
+
+.magic-radio+label{
+    cursor: pointer;
 }
 
 /* 多选按钮 */

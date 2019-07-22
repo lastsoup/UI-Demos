@@ -805,3 +805,7 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
 .datepicker.dropdown-menu th{
     color: #33B4FF;
 }
+
+.table-condensed{
+    width:250px;
+}

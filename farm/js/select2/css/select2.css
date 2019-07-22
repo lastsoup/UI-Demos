@@ -284,7 +284,7 @@
   float: left;
   margin-right: 5px;
   margin-top: 5px;
-  padding: 1px 6px;
+  padding: 3px 6px;
 }
 
 .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
@@ -349,6 +349,7 @@
   box-shadow: none;
   -webkit-appearance: textfield;
   color:#fff;
+  padding: 3px 0;
 }
 
 .select2-container--default .select2-results > .select2-results__options {

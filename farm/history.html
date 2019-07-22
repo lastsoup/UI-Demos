@@ -10,6 +10,7 @@
     <link href="css/base.css" rel="stylesheet" type="text/css" />
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <link href="css/dialog.css" rel="stylesheet" type="text/css" />
+    <link href="ui.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <div class="page">
@@ -79,7 +80,7 @@
                                                         <span style="margin: 0 10px;">至 </span>
                                                         <input type="text" class="form-control" autocomplete="off" name="end" />
                                                     </div>
-                                                    <input type="button" class="btn-search" value="" />
+                                                    <input type="button" class="btn btn-search" value="" />
                                                 </div>
                                             </div>
                                             <div class="chart-body">
@@ -151,6 +152,27 @@
                 }
             }
         },
+        dataZoom: [
+        {
+            type: 'slider',
+            xAxisIndex: 0,
+            color:"#fff",
+            textStyle:{color:"#fff"},
+            backgroundColor:"rgba(15,73,107,0.4)",
+            fillerColor:"rgba(18,92,135,0.5)",
+            borderColor:"transparent",
+            handleSize: '300%',
+            handleIcon: 'M10.7,11.9H9.3c-4.9,0.3-8.8,4.4-8.8,9.4c0,5,3.9,9.1,8.8,9.4h1.3c4.9-0.3,8.8-4.4,8.8-9.4C19.5,16.3,15.6,12.2,10.7,11.9z M13.3,24.4H6.7V23h6.6V24.4z M13.3,19.6H6.7v-1.4h6.6V19.6z',
+            height: 5,
+            bottom:25,
+            filterMode: 'empty'
+        },
+        {
+            type: 'inside',//这个 dataZoom 组件是 inside 型 dataZoom 组件（能在坐标系内进行拖动，以及用滚轮（或移动触屏上的两指滑动）进行缩放）
+            xAxisIndex: 0,
+            filterMode: 'empty'
+        }
+       ],
         legend: {
            data: options.legend,
            textStyle:{
@@ -160,10 +182,10 @@
         },
         animation:true,
         grid: {
-            left: '30px',
-            right: '20px',
+            left: '40px',
+            right: '40px',
             top: '10px',
-            bottom: '30px'
+            bottom: '60px'
         },
         xAxis : [
             {
