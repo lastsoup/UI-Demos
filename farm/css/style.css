@@ -91,15 +91,12 @@
 
 .left,.right,.center-bottom{
 	background: transparent;
-	overflow-y: auto;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 .main .left ul li{
 	height: 50px;
 	line-height: 50px;
-	/* background: url(./images/left-back.png) no-repeat;
-	background-size:100% 100%; */
 	margin: 20px;
 	background: linear-gradient(270deg,rgba(62,228,251,0) 0%,rgba(29,196,246,0.11) 100%);
 }
@@ -688,6 +685,7 @@ color:#5CFF00;
 .history-page .warn-area .date-type select{
 	width:130px;
 }
+
 
 
 

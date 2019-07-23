@@ -194,7 +194,9 @@
                 playsInline 
                 webkit-playsinline>
               </video>
+              
               <ul>
+                  <span class="control-btn"></span>
                   <li class="active"><i></i>1号监视器</li>
                   <li><i></i>1号监视器</li>
                   <li><i></i>1号监视器</li>
@@ -203,6 +205,23 @@
                   <li><i></i>1号监视器</li>
               </ul>
         </div>
+        <div id="control-video" class="outer">
+                <p><span>镜头远近</span><i class="far"></i> <i class="near"></i></p>
+                <div>
+                    <span>方向移动</span>
+                   <ul>
+                      <li></li>
+                      <li></li>
+                      <li></li>
+                      <li></li>
+                      <li></li>
+                      <li></li>
+                      <li></li>
+                      <li></li>
+                      <li></li>
+                   </ul>
+                </div>
+         </div>
         <div id="showsetting">
               <ul> 
                   <li class="detail">
@@ -250,6 +269,24 @@ layer.open({
 });
 });
 
+$(".control-btn").click(function(){
+    layer.open({
+      type: 1, 
+      title: false,
+      shadeClose:true,
+      skin: 'video-dialog',
+      icon:-1,
+      success: function(){
+         $("#showvideo ul").addClass("blur");
+      },
+      end: function(){
+         $("#showvideo ul").removeClass("blur");
+      },
+      content: $("#control-video")
+    });
+});
+
+
 var h=($(window).height() - $(".header").height()) + "px";
 $(".left").slimscroll({
 height: h,
@@ -267,7 +304,7 @@ wrapperClass: 'fr',
 size: "3px"
 });
 
-window.addEventListener("resize",function(){
+$(window).resize(function() {
     var h=($(window).height() - $(".header").height()) + "px";
     $(".left").slimScroll({destroy: true}).height(h);
     $(".right").slimScroll({destroy: true}).height(h);
