@@ -42,7 +42,30 @@
                     <div class="menu"><a href="history.html">历史曲线<span></span></a></div>
                     <div class="menu"><a href="warn.html">报警记录<span></span></a></div>
                     <div class="userinfo">
-                        <a class="user fr" href="javascript:;"></a>
+                        <div id="btnsetting" class="user fr">
+                            <span></span>
+                            <ul class="slidedown" style="display: none;">
+                                <li>
+                                    <a href="javascript:void(0)" class="setting">
+                                        <div class="opacity"></div>
+                                        <div class="opacity text">
+                                            <div class="ico"></div>
+                                            <span>个人设置</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" class="quit">
+                                        <div class="opacity"></div>
+                                        <div class="opacity text">
+                                            <div class="ico"></div>
+                                            <span>退出</span>
+                                        </div>
+            
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                         <a class="list fr" href="javascript:;"></a>
                     </div>
                 </div>
@@ -291,7 +314,7 @@ var h=($(window).height() - $(".header").height()) + "px";
 $(".left").slimscroll({
 height: h,
 width:"300px",
-color: "#fff",
+color: "rgba(15,73,107)",
 wrapperClass: 'fl',
 size: "3px"
 });
@@ -299,7 +322,7 @@ size: "3px"
 $(".right").slimscroll({
 height: h,
 width:"300px",
-color: "#fff",
+color: "rgba(15,73,107)",
 wrapperClass: 'fr',
 size: "3px"
 });
@@ -310,7 +333,13 @@ $(window).resize(function() {
     $(".right").slimScroll({destroy: true}).height(h);
  });
 
+$("#btnsetting").click(function(){
+    $(this).find("ul").slideDown("fast");
+});
 
+$("#btnsetting").mouseleave(function(){
+    $(this).find("ul").slideUp("fast");
+});
 </script>
 </body>
 </html>

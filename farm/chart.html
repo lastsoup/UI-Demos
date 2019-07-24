@@ -251,6 +251,24 @@
 }
 
 
+function randomData() {
+    now = new Date(+now + 1000);
+    value = Math.random() * 10;
+    return {
+        name: now.toString(),
+        value: [
+            now,
+            Math.round(value)
+        ]
+    }
+}
+
+var data = [];
+var now =new Date();
+for (var i = 0; i <21; i++) {
+    data.push(randomData());
+}
+
 var myChart1= echarts.init(document.getElementById('chart1'),'light');
 var myChart2= echarts.init(document.getElementById('chart2'),'light');
 var myChart3= echarts.init(document.getElementById('chart3'),'light');
@@ -287,7 +305,7 @@ var option4=getChartOption({
             linecolor:"#D5CD05",
             areabg:'rgba(255,245,0,0.31)',
             smooth:true,
-            seriesdata:[]
+            seriesdata:data
         }]
 });
 var option5=getChartOption({
@@ -349,40 +367,33 @@ var option8=getChartOption({
 
 
 
-function randomData() {
-    now = new Date(+now + oneDay);
-    value = Math.random() * 10;
-    return {
-        name: now.toString(),
-        value: [
-            [now.getFullYear(), now.getMonth() + 1, now.getDate()].join('/'),
-            Math.round(value)
-        ]
-    }
-}
-
-var data = [];
-var now = +new Date(1997, 9, 3);
-var oneDay = 24 * 3600 * 1000;
-var value = Math.random() * 1000;
-for (var i = 0; i < 10; i++) {
-    data.push(randomData());
-}
 
 myChart1.setOption(option1);
 myChart2.setOption(option2);
 myChart3.setOption(option3);
 option4.xAxis.type="time";
 option4.xAxis.splitLine={show: false};
-// option4.xAxis.axisLabel={formatter: function (value, index) {
-//     // 格式化成月/日，只在第一个刻度显示年份
-//     var date = new Date(value);
-//     var texts = [(date.getMonth() + 1), date.getDate()];
-//     if (index === 0) {
-//         texts.unshift(date.getYear());
-//     }
-//     return texts.join('-');
-// }};
+var color = function(t) {
+        var t = new Date(t);
+        var n = t.getFullYear();
+        var a = t.getMonth() + 1;
+        var s = t.getDate() < 10 ? "0" + t.getDate() : t.getDate();
+        var o = t.getHours();
+        var r = t.getMinutes();
+        var l = t.getSeconds();
+        if (r <= 9)
+            r = "0" + r;
+        if (l <= 9)
+            l = "0" + l;
+        var c = n + "/" + a + "/" + s;
+        var u = o + ":" + r + ":" + l;
+        return u;
+};
+
+option4.xAxis.axisLabel={formatter: function (value, index) {
+    var date = color(value);
+    return date;
+}};
 myChart4.setOption(option4);
 myChart5.setOption(option5);
 myChart6.setOption(option6);
@@ -400,10 +411,8 @@ window.addEventListener("resize",function(){
  });
 
 setInterval(function () {
-for (var i = 0; i <1; i++) {
-    data.shift();
-    data.push(randomData());
-}
+data.shift();
+data.push(randomData());
 myChart4.setOption({
     series: [{
         data: data
