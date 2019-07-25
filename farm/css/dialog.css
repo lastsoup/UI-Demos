@@ -13,9 +13,10 @@
 	letter-spacing: 2px;
 }
 
-.farm-dialog .layui-layer-ico {
+.farm-dialog .layui-layer-ico,.layui-layer-setwin .layui-layer-close2:hover {
     background: url(./images/close.png) no-repeat;
 }
+
 
 .farm-dialog .layui-layer-btn0{
 	background:rgba(50,102,145,1);

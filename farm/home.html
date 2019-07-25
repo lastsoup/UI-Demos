@@ -7,7 +7,7 @@
     <script type="text/javascript" src="js/layer/layer.js"></script>
     <script type="text/javascript" src="js/jquery.slimscroll.min.js"></script>
     <link href="css/dialog.css" rel="stylesheet" type="text/css" />
-    <link href="ui.css" rel="stylesheet" type="text/css" />
+    <link href="css/ui.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
         <div class="page">
@@ -66,7 +66,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <a class="list fr" href="javascript:;"></a>
+                        <a class="list fr" id="btnList" href="javascript:;"></a>
                     </div>
                 </div>
                 <div class="main">
@@ -208,6 +208,9 @@
                         </div>
                 </div>
         </div>
+        <div id="showlist">
+            32323
+        </div>
         <div id="showvideo" >
                 <video 
                 id="myPlayer"
@@ -310,27 +313,31 @@ $(".control-btn").click(function(){
 });
 
 
-var h=($(window).height() - $(".header").height()) + "px";
-$(".left").slimscroll({
-height: h,
-width:"300px",
-color: "rgba(15,73,107)",
-wrapperClass: 'fl',
-size: "3px"
-});
 
-$(".right").slimscroll({
-height: h,
-width:"300px",
-color: "rgba(15,73,107)",
-wrapperClass: 'fr',
-size: "3px"
-});
 
+
+function setSlimScroll(){
+    var h=($(window).height() - $(".header").height()) + "px";
+    $(".left").slimscroll({
+    height: h,
+    width:"300px",
+    color: "rgba(15,73,107)",
+    wrapperClass: 'fl',
+    size: "3px"
+    });
+
+    $(".right").slimscroll({
+    height: h,
+    width:"300px",
+    color: "rgba(15,73,107)",
+    wrapperClass: 'fr',
+    size: "3px"
+    });
+}
+setSlimScroll();
 $(window).resize(function() {
     var h=($(window).height() - $(".header").height()) + "px";
-    $(".left").slimScroll({destroy: true}).height(h);
-    $(".right").slimScroll({destroy: true}).height(h);
+    $(".left,.right").slimScroll({destroy: true}).height(h);
  });
 
 $("#btnsetting").click(function(){
@@ -340,6 +347,17 @@ $("#btnsetting").click(function(){
 $("#btnsetting").mouseleave(function(){
     $(this).find("ul").slideUp("fast");
 });
+
+$("#btnList").click(function(){
+    layer.open({
+      type: 1, 
+      title: false,
+      resize:false,
+      skin: 'farm-dialog',
+      content: $("#showlist")
+    });
+});
+
 </script>
 </body>
 </html>
