@@ -209,7 +209,7 @@
 }
 
 
-#showvideo ul.blur{
+#showvideo ul.blur,.main-blur{
 	-webkit-filter: blur(3px);
 	filter: blur(3px);  
 }
@@ -219,7 +219,7 @@
 	margin-left: 250px;
 }
 
-.video-dialog .layui-layer-ico{
+.video-dialog .layui-layer-ico,.video-dialog .layui-layer-ico:hover{
 	background:none;
 }
 
@@ -316,4 +316,78 @@
 
 #control-video ul li:nth-child(9){
 	background: url(./images/video/23.png) no-repeat;
+}
+
+
+.farm-list{
+	border:none;
+	background-color:transparent;
+	box-shadow:none;
+}
+
+.farm-list .layui-layer-ico{
+    position: fixed;
+    top: 10;
+    right: 0;
+}
+
+#showlist{
+	display: none;
+	text-align:center;
+}
+
+#showlist input[type=text]{
+	background: transparent;
+	font-size: 32px;
+	padding: 20px;
+	text-align: center;
+	color:#fff;
+}
+
+#showlist input[type=text]::-webkit-input-placeholder
+{
+	color:#2F6998;
+}
+
+#showlist .tab li{
+    display: inline-block;
+    padding: 10px 50px;
+    background-color: #22395B;
+    cursor: pointer;
+    margin: 0 20px;
+}
+
+#showlist .tab li.active{
+	background-color:#00ABB1;
+}
+
+#showlist .tab::before{
+	content: "";
+    display: block;
+    position: absolute;
+    width: 80%;
+    left: 10%;
+	height: 1px;
+	top: 100px;
+	background: #25487B;
+	z-index: -1;
+}
+
+#showlist .tab-list li{
+	display: inline-block;
+	color:#00F7FF;
+	margin: 20px;
+	cursor: pointer;
+}
+
+#showlist .tab-list{
+	margin: 20px 100px;
+}
+#showlist .tab-list li img{
+	width:100px;
+	height: 100px;
+}
+
+#showlist .tab-list li p{
+	padding: 10px;
 }

@@ -209,7 +209,21 @@
                 </div>
         </div>
         <div id="showlist">
-            32323
+            <input type="text" placeholder="输入名称进行搜索" />
+            <ul class="tab">
+                <li class="active">全部</li>
+                <li>温室</li>
+                <li>大田</li>
+                <li>水产</li>
+            </ul>
+            <ul class="tab-list">
+                <li><img /><p>温室1</p></li>
+                <li><img /><p>温室1</p></li>
+                <li><img /><p>温室1</p></li>
+                <li><img /><p>温室1</p></li>
+                <li><img /><p>温室1</p></li>
+                <li><img /><p>温室1</p></li>
+            </ul>
         </div>
         <div id="showvideo" >
                 <video 
@@ -313,6 +327,24 @@ $(".control-btn").click(function(){
 });
 
 
+$("#btnList").click(function(){
+    layer.open({
+      type: 1, 
+      title: false,
+      offset:70,
+      resize:false,
+      success: function(){
+         $(".main").addClass("main-blur");
+      },
+      end: function(){
+         $(".main").removeClass("main-blur");
+      },
+      area:["100%","100%"],
+      skin: 'farm-dialog farm-list',
+      content: $("#showlist")
+    });
+});
+
 
 
 
@@ -348,15 +380,7 @@ $("#btnsetting").mouseleave(function(){
     $(this).find("ul").slideUp("fast");
 });
 
-$("#btnList").click(function(){
-    layer.open({
-      type: 1, 
-      title: false,
-      resize:false,
-      skin: 'farm-dialog',
-      content: $("#showlist")
-    });
-});
+
 
 </script>
 </body>
