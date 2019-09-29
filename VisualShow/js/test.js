@@ -1,0 +1,1 @@
+;(function($,undefined) {})(window.jQuery);

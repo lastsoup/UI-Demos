@@ -1,0 +1,18 @@
+* {
+	font-size: 12px;
+	font-family: 'Microsoft Yahei', "simsun";
+}
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	user-select: none;
+}
+
+ul,li{
+	margin: 0;
+    padding: 0;
+    list-style: none;
+}
