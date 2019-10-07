@@ -13,10 +13,10 @@
 			'.btnplay': {
 				'click': function (e, ele, data) {
 					var len=data.items.length;
-					var actice=$(".timeBanner-items .item-top.active");
-					var index=actice.parent().index();
+					var actice=$(".timeBanner-items .item.active");
+					var index=actice.index();
 					var pastEle=$(".timeBanner-items .item:lt("+index+")");
-					pastEle.find(".item-top").addClass("past");
+					pastEle.addClass("past");
 					$(".play-wrap").show();
 					if(ele.hasClass("pause")){
 						ele.removeClass("pause");
@@ -26,8 +26,8 @@
 						ele.attr("title","暂停");
 					}
 					timer=setInterval(function(){
-						var actice=$(".timeBanner-items .item-top.active");
-						var index=actice.parent().index();
+						var actice=$(".timeBanner-items .item.active");
+						var index=actice.index();
 						if(index<(len-1)){
 							actice.removeClass("active");
 							actice.addClass("past");
@@ -36,14 +36,14 @@
 						var isnext=index%num==(num-1);
 						if(isnext)
 						  $(".btn-next").click();
-						actice.parent().next().children().click();
+						actice.next().children().click();
 					},1000);
 				}
 			},
 			'.btnstop': {
 				'click': function (e, ele, data) {
 					$(".btnplay").removeClass("pause");
-					$(".timeBanner-items .item-top").removeClass("past");
+					$(".timeBanner-items .item").removeClass("past");
 					$(".play-wrap").hide();
 					clearInterval(timer);
 				}
@@ -232,8 +232,10 @@
 		var data = this.options.data.items;
 		var items=[];
 		for(var i=0,len=data.length; i<len; i++){
-			var item = ['<div class="item item',i,' bg-circle">',
-							'<h5 class="item-top ',(i === this.options.config.activeItemIndex?'active':''),'"><i></i></h5><span class="text">'+data[i].text+'</span>',
+			var active=(i === this.options.config.activeItemIndex?' active':'');
+			var item = ['<div class="item item',i,active,' bg-circle">',
+                            '<h5 class="item-top"><i></i></h5><span class="text">'+data[i].text+'</span>',
+							//'<h5 class="item-top ',(i === this.options.config.activeItemIndex?'active':''),'"><i></i></h5><span class="text">'+data[i].text+'</span>',
 							'</h6>',
 						'</div>'].join('');
 			items.push(item);
@@ -313,7 +315,7 @@
 						that.preHandle(e,ele,data)
 					}
 				},
-				'.item-top':{
+				'.item':{
 					'click':function(e,ele){
 						that.itemHandle(e,ele)
 					}
@@ -328,10 +330,8 @@
 	 * */
 	UITemplate.prototype.itemHandle = function(e,ele){
 		if(!ele.hasClass('active')){
-			this.dom.find('.selectedItem').removeClass('selectedItem');
-			this.dom.find('.item-top.active').removeClass('active');
+			this.dom.find('.active').removeClass('active');
 			ele.addClass('active');
-			ele.parent().addClass('selectedItem');
 		}
 	}
 	

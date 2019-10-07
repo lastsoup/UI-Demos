@@ -42,13 +42,14 @@
 		<div class='headLeft'>
 			<ul id="btn-menu">
 				<li class='icon fa now'>
+					<i></i>
 					<div class='iconCon'>
 						<div class='conTop'>
 							<span class='conTopLeft'>发电</span>
 							<span class='noSelect'>全不选</span>
 							<span class='selectAll'>全选</span>
 						</div>
-						<div class='faDiv'>
+						<div class='faDiv menu-icon'>
 							<span column='fahd' code='1001' plant='planthd' type='火电'>火电厂</span>
 							<span column='fasd' code='1002' plant='plantsd' type='水电'>水电厂</span>
 							<span column='fafd' code='1004' plant='plantfd' type='风电'>风电场</span>
@@ -57,60 +58,62 @@
 							<span column='facx' code='1006' plant='plantcx' type='抽蓄'>抽蓄电站</span>
 						</div>
 						<div class='liBtn'>
-							<span class='more'>更多设置</span>
+							<span class='more'>更多设置<em>>></em></span>
 							<span class='confirm'>确定</span>
 							<span class='cancel'>取消</span>
 						</div>
 					</div>
 				</li>
 				<li class='icon sd now'>
+					<i></i>
 					<div class='iconCon'>
 						<div class='conTop'>
 							<span class='conTopLeft'>输电</span>
 							<span class='noSelect'>全不选</span>
 							<span class='selectAll'>全选</span>
 						</div>
-						<div class="shuDiv">
+						<div class="shuDiv menu-icon">
 							<span column='jlxlgy' code='acline' type='acline' id='acline'>交流线路</span>
 							<span column='zlxlgy' code='dcline' type='dcline' id='dcline'>直流线路</span>
 						</div>
 						<div class='liBtn'>
-							<span class='more'>更多设置</span>
+							<span class='more'>更多设置<em>>></em></span>
 							<span class='confirm'>确定</span>
 							<span class='cancel'>取消</span>
 						</div>
 					</div>
 				</li>
-				<li class='icon bd now'>
+				<li class='icon bd now sp'>
+					<i></i>
 					<div class='iconCon'>
 						<div class='conTop'>
 							<span class='conTopLeft'>变电</span>
 							<span class='noSelect'>全不选</span>
 							<span class='selectAll'>全选</span>
 						</div>
-						<div class="bianDiv">
+						<div class="bianDiv menu-icon">
 							<span code='2001' column='bdbd' name='substation'>变电站</span>
 							<span code='3001' column='bdhl' name='conversub' id="conversub">换流站</span>
 							<span code='2002' column='kgz' name='kgz'>开关站</span>
 							<span code='2003' column='qyz' name='qyz'>牵引站</span>
 						</div>
 						<div class='liBtn'>
-							<span class='more'>更多设置</span>
+							<span class='more'>更多设置<em>>></em></span>
 							<span class='confirm'>确定</span>
 							<span class='cancel'>取消</span>
 						</div>
 					</div>
 				</li>
-				<li class='icon split'></li>
 				<li class='icon dy half'>
+					<i></i>
 					<div class='iconCon'>
 						<div class='conTop'>
-							<span class='conTopLeft'>电压等级</span>
+							<span class='conTopLeft'>交流电压等级</span>
 							<span class='noSelect'>全不选</span>
 							<span class='selectAll'>全选</span>
 							<span class="lock"></span>
 						</div>
-						<div class="dyDiv">
+						<div class="dyDiv menu-icon">
 							<span top='5' column="dianyagy" text="1000kV">1000kV</span>
 							<span top='5' column="dianyagy" text="750kV">750kV</span>
 							<span top='8' column="dianyagy" text="500kV">500kV</span>
@@ -122,21 +125,22 @@
 							<span top='14' column="dianyagy" text="35kV">35kV</span>
 							<span top='14' column="dianyagy" text="30kV">
 								<35kV</span> </div> <div class='liBtn'>
-									<span class='more'>更多设置</span>
+									<span class='more'>更多设置<em>>></em></span>
 									<span class='confirm'>确定</span>
 									<span class='cancel'>取消</span>
 						</div>
 					</div>
 				</li>
-				<li class='icon zfdy half'>
+				<li class='icon zfdy half sp'>
+					<i></i>
 					<div class='iconCon'>
 						<div class='conTop'>
-							<span class='conTopLeft'>电压等级</span>
+							<span class='conTopLeft'>直流电压等级</span>
 							<span class='noSelect'>全不选</span>
 							<span class='selectAll'>全选</span>
 							<span class="lock"></span>
 						</div>
-						<div class="zfdyDiv">
+						<div class="zfdyDiv menu-icon">
 							<span top='5' column="dianyagy" text="±1100kV">±1100kV</span>
 							<span top='5' column="dianyagy" text="±1000kV">±1000kV</span>
 							<span top='5' column="dianyagy" text="±800kV">±800kV</span>
@@ -151,32 +155,51 @@
 							<span top='14' column="dianyagy" text="±110kV">
 								±120kV</span> </div>
 						<div class='liBtn'>
-							<span class='more'>更多设置</span>
+							<span class='more'>更多设置<em>>></em></span>
 							<span class='confirm'>确定</span>
 							<span class='cancel'>取消</span>
 						</div>
 					</div>
 				</li>
-				<li class='icon split'></li>
 				<li class='icon wdzt'>
+					<i></i>
 					<div class='iconCon'>
+						<div class='conTop'>
+							<span class='conTopLeft'>其他设置</span>
+						</div>
 						<div class="showName shezhi wdztItem">
 							<div class="sztitle">显示设置</div>
-							<div class='szicon now czmc' type="czmc"></div>
+							<!-- <div class='szicon now czmc' type="czmc"></div>
 							<div class='szss'>厂站名称</div>
 							<div class='szicon now gt' type="gt"></div>
-							<div class='szss'>杆塔</div>
+							<div class='szss'>杆塔</div> -->
+							<p>
+								<input id="czmc" class="magic-checkbox" type="checkbox">
+								<label for="czmc">厂站名称</label>
+								<input id="gt" class="magic-checkbox" type="checkbox">
+								<label for="gt">杆塔</label>
+							</p>
 						</div>
 						<div class='szyxzt wdztItem'>
 							<div class='sztitle'>运行状态</div>
-							<div class='szicon' code='1001' type="gh"></div>
+							<p>
+								<input id="gh" class="magic-checkbox" type="checkbox" checked>
+								<label for="gh">规划</label>
+								<input id="zj" class="magic-checkbox" type="checkbox" checked>
+								<label for="zj">在建</label>
+								<input id="yx" class="magic-checkbox" type="checkbox" checked>
+								<label for="yx">运行</label>
+								<input id="ty" class="magic-checkbox" type="checkbox">
+								<label for="ty">退运</label>
+							</p>
+							<!-- <div class='szicon' code='1001' type="gh"></div>
 							<div class='szss'>规划</div>
 							<div class='szicon' code='1002' type="zj"></div>
 							<div class='szss'>在建</div>
 							<div class='szicon' code='1003' type="yx"></div>
 							<div class='szss'>运行</div>
 							<div class='szicon now' code='1004,1006' type="ty"></div>
-							<div class='szss'>退运</div>
+							<div class='szss'>退运</div> -->
 						</div>
 						<!-- <div class='shezhi wdztItem'>
 								 <div class='sztitle'>地图设置</div>
@@ -188,132 +211,156 @@
 
 						<div class='shezhi wdztItem'>
 							<div class='sztitle'>图标颜色</div>
-							<div id='bhdydj' class='szcirle' type="dydj"></div>
+							<!-- <div id='bhdydj' class='szcirle' type="dydj"></div>
 							<div class='szss'>按电压等级</div>
 							<div id='bhlxsz' class='szcirle now' type="lxsz"></div>
-							<div class='szss'>按类型</div>
+							<div class='szss'>按类型</div> -->
+							<p>
+									<input type="radio" id="bhdydj" class="magic-radio" name="szcirle" checked />
+									<label for="bhdydj">按电压等级</label>
+									<span></span>
+									<input type="radio" id="bhlxsz" class="magic-radio" name="szcirle" />
+									<label for="bhlxsz">按类型</label>
+								</p>
 						</div>
 
 						<div class='liBtn'>
-							<span class='more'>更多设置</span>
+							<span class='more'>更多设置<em>>></em></span>
 							<span class='confirm'>确定</span>
 							<span class='cancel'>取消</span>
 						</div>
 					</div>
 				</li>
-				<div class="wblock"></div>
 			</ul>
+			<div class="wblock"></div>
 		</div>
 		<div class="morewrap">
-		<div class="moreSetUp">
-			<div class="iconCon">
-				<div class="conTop">
-					<span class="conTopLeft">发电</span>
-					<span class="noSelect">全不选</span>
-					<span class="selectAll">全选</span>
+			<div class="title">更多设置</div>
+			<div class="moreSetUp">
+				<div class="iconCon">
+					<div class="conTop">
+						<span class="conTopLeft">发电</span>
+						<span class="noSelect">全不选</span>
+						<span class="selectAll">全选</span>
+					</div>
+					<div class="faDiv menu-icon">
+						<span column="fahd" code="1001" plant="planthd" type="火电">火电厂</span>
+						<span column="fasd" code="1002" plant="plantsd" type="水电">水电厂</span>
+						<span column="fafd" code="1004" plant="plantfd" type="风电">风电场</span>
+						<span column="fagf" code="1005" plant="plantgf" type="光伏">光伏电站</span>
+						<span column="fahed" code="1003" plant="planthed" type="核电">核电厂</span>
+						<span column="facx" code="1006" plant="plantcx" type="抽蓄">抽蓄电站</span>
+					</div>
 				</div>
-				<div class="faDiv">
-					<span column="fahd" code="1001" plant="planthd" type="火电">火电厂</span>
-					<span column="fasd" code="1002" plant="plantsd" type="水电">水电厂</span>
-					<span column="fafd" code="1004" plant="plantfd" type="风电">风电场</span>
-					<span column="fagf" code="1005" plant="plantgf" type="光伏">光伏电站</span>
-					<span column="fahed" code="1003" plant="planthed" type="核电">核电厂</span>
-					<span column="facx" code="1006" plant="plantcx" type="抽蓄">抽蓄电站</span>
+				<div class="iconCon marginTop">
+					<div class="conTop">
+						<span class="conTopLeft">输电</span>
+						<span class="noSelect">全不选</span>
+						<span class="selectAll">全选</span>
+					</div>
+					<div class="shuDiv menu-icon">
+						<span column="jlxlgy" code="acline" type="acline" id="acline">交流线路</span>
+						<span column="zlxlgy" code="dcline" type="dcline" id="dcline">直流线路</span>
+					</div>
 				</div>
-			</div>
-			<div class="iconCon marginTop">
-				<div class="conTop">
-					<span class="conTopLeft">输电</span>
-					<span class="noSelect">全不选</span>
-					<span class="selectAll">全选</span>
+				<div class="iconCon marginTop">
+					<div class="conTop">
+						<span class="conTopLeft">变电</span>
+						<span class="noSelect">全不选</span>
+						<span class="selectAll">全选</span>
+					</div>
+					<div class="bianDiv menu-icon">
+						<span code="2001" column="bdbd" name="substation">变电站</span>
+						<span code="3001" column="bdhl" name="conversub" id="conversub">换流站</span>
+						<span code="2002" column="kgz" name="kgz">开关站</span>
+						<span code="2003" column="qyz" name="qyz">牵引站</span>
+					</div>
 				</div>
-				<div class="shuDiv">
-					<span column="jlxlgy" code="acline" type="acline" id="acline">交流线路</span>
-					<span column="zlxlgy" code="dcline" type="dcline" id="dcline">直流线路</span>
-				</div>
-			</div>
-			<div class="iconCon marginTop">
-				<div class="conTop">
-					<span class="conTopLeft">变电</span>
-					<span class="noSelect">全不选</span>
-					<span class="selectAll">全选</span>
-				</div>
-				<div class="bianDiv">
-					<span code="2001" column="bdbd" name="substation">变电站</span>
-					<span code="3001" column="bdhl" name="conversub" id="conversub">换流站</span>
-					<span code="2002" column="kgz" name="kgz">开关站</span>
-					<span code="2003" column="qyz" name="qyz">牵引站</span>
-				</div>
-			</div>
 
-			<div class="iconCon marginTop">
-				<div class="conTop">
-					<span class="conTopLeft">交流电压等级</span>
-					<span class="noSelect">全不选</span>
-					<span class="selectAll">全选</span>
-					<span class="lock"></span>
-				</div>
-				<div class="dyDiv">
-					<span top="5" column="dianyagy" text="1000kV" select="">1000kV</span>
-					<span top="5" column="dianyagy" text="750kV" select="">750kV</span>
-					<span top="8" column="dianyagy" text="500kV" class="dianyagy" select="false">500kV</span>
-					<span top="10" column="dianyagy" text="330kV" class="dianyagy" select="false">330kV</span>
-					<span top="10" column="dianyagy" text="220kV" class="dianyagy" select="false">220kV</span>
-					<span top="12" column="dianyagy" text="110kV" class="dianyagy" select="false">110kV</span>
-					<span top="14" column="dianyagy" text="66kV" class="dianyagy" select="false">66kV</span>
-					<span top="14" column="dianyagy" text="60kV" class="dianyagy" select="false">60kV</span>
-					<span top="14" column="dianyagy" text="35kV" class="dianyagy" select="false">35kV</span>
-					<span top="14" column="dianyagy" text="30kV" class="dianyagy" select="false">&lt;35kV</span>
+				<div class="iconCon marginTop">
+					<div class="conTop">
+						<span class="conTopLeft">交流电压等级</span>
+						<span class="noSelect">全不选</span>
+						<span class="selectAll">全选</span>
+						<span class="lock"></span>
+					</div>
+					<div class="dyDiv menu-icon">
+						<span top="5" column="dianyagy" text="1000kV">1000kV</span>
+						<span top="5" column="dianyagy" text="750kV">750kV</span>
+						<span top="8" column="dianyagy" text="500kV">500kV</span>
+						<span top="10" column="dianyagy" text="330kV">330kV</span>
+						<span top="10" column="dianyagy" text="220kV">220kV</span>
+						<span top="12" column="dianyagy" text="110kV">110kV</span>
+						<span top="14" column="dianyagy" text="66kV">66kV</span>
+						<span top="14" column="dianyagy" text="60kV">60kV</span>
+						<span top="14" column="dianyagy" text="35kV">35kV</span>
+						<span top="14" column="dianyagy" text="30kV">&lt;35kV</span>
 
+					</div>
 				</div>
-			</div>
 
-			<div class="iconCon marginTop">
-				<div class="conTop">
-					<span class="conTopLeft">直流电压等级</span>
-					<span class="noSelect">全不选</span>
-					<span class="selectAll">全选</span>
-					<span class="lock"></span>
+				<div class="iconCon marginTop">
+					<div class="conTop">
+						<span class="conTopLeft">直流电压等级</span>
+						<span class="noSelect">全不选</span>
+						<span class="selectAll">全选</span>
+						<span class="lock"></span>
+					</div>
+					<div class="zfdyDiv menu-icon">
+						<span top="5" column="dianyagy" text="±1100kV">±1100kV</span>
+						<span top="5" column="dianyagy" text="±1000kV">±1000kV</span>
+						<span top="5" column="dianyagy" text="±800kV">±800kV</span>
+						<span top="5" column="dianyagy" text="±660kV">±660kV</span>
+						<span top="8" column="dianyagy" text="±500kV">±500kV</span>
+						<span top="10" column="dianyagy" text="±420kV">±420kV</span>
+						<span top="10" column="dianyagy" text="±400kV">±400kV</span>
+						<span top="10" column="dianyagy" text="±200kV">±200kV</span>
+						<span top="12" column="dianyagy" text="±167kV">±167kV</span>
+						<span top="12" column="dianyagy" text="±125kV">±125kV</span>
+						<span top="12" column="dianyagy" text="±120kV">±120kV</span>
+						<span top="14" column="dianyagy" text="±110kV">&lt;±120kV</span>
+					</div>
 				</div>
-				<div class="zfdyDiv">
-					<span top="5" column="dianyagy" text="±1100kV" select="">±1100kV</span>
-					<span top="5" column="dianyagy" text="±1000kV" select="">±1000kV</span>
-					<span top="5" column="dianyagy" text="±800kV" select="">±800kV</span>
-					<span top="5" column="dianyagy" text="±660kV" select="">±660kV</span>
-					<span top="8" column="dianyagy" text="±500kV" class="dianyagy" select="false">±500kV</span>
-					<span top="10" column="dianyagy" text="±420kV" class="dianyagy" select="false">±420kV</span>
-					<span top="10" column="dianyagy" text="±400kV" class="dianyagy" select="false">±400kV</span>
-					<span top="10" column="dianyagy" text="±200kV" class="dianyagy" select="false">±200kV</span>
-					<span top="12" column="dianyagy" text="±167kV" class="dianyagy" select="false">±167kV</span>
-					<span top="12" column="dianyagy" text="±125kV" class="dianyagy" select="false">±125kV</span>
-					<span top="12" column="dianyagy" text="±120kV" class="dianyagy" select="false">±120kV</span>
-					<span top="14" column="dianyagy" text="±110kV" class="dianyagy" select="false">&lt;±120kV</span>
-				</div>
-			</div>
 
-			<div class="iconCon marginTop">
-				<div class="conTop">
-					<span class="conTopLeft">其他设置</span>
-				</div>
-				<div class="showName shezhi wdztItem" style="border-top:none">
-					<div class="sztitle">显示设置</div>
-					<div class="szicon now czmc" type="czmc"></div>
-					<div class="szss">厂站名称</div>
-					<div class="szicon now gt" type="gt"></div>
-					<div class="szss">杆塔</div>
-				</div>
-				<div class="szyxzt wdztItem">
-					<div class="sztitle">运行状态</div>
-					<div class="szicon" code="1001" type="gh"></div>
-					<div class="szss">规划</div>
-					<div class="szicon" code="1002" type="zj"></div>
-					<div class="szss">在建</div>
-					<div class="szicon" code="1003" type="yx"></div>
-					<div class="szss">运行</div>
-					<div class="szicon now" code="1004,1006" type="ty"></div>
-					<div class="szss">退运</div>
-				</div>
-				<!--  <div class='shezhi wdztItem'>
+				<div class="iconCon marginTop">
+					<div class="conTop">
+						<span class="conTopLeft">其他设置</span>
+					</div>
+					<div class="showName shezhi wdztItem" style="border-top:none">
+						<div class="sztitle">显示设置</div>
+						<p>
+							<input id="czmc1" class="magic-checkbox" type="checkbox">
+							<label for="czmc1">厂站名称</label>
+							<input id="gt1" class="magic-checkbox" type="checkbox">
+							<label for="gt1">杆塔</label>
+						</p>
+						<!-- <div class="szicon now czmc" type="czmc"></div>
+						<div class="szss">厂站名称</div>
+						<div class="szicon now gt" type="gt"></div>
+						<div class="szss">杆塔</div> -->
+					</div>
+					<div class="szyxzt wdztItem">
+						<div class="sztitle">运行状态</div>
+						<p>
+								<input id="gh1" class="magic-checkbox" type="checkbox" checked>
+								<label for="gh1">规划</label>
+								<input id="zj1" class="magic-checkbox" type="checkbox" checked>
+								<label for="zj1">在建</label>
+								<input id="yx1" class="magic-checkbox" type="checkbox" checked>
+								<label for="yx1">运行</label>
+								<input id="ty1" class="magic-checkbox" type="checkbox">
+								<label for="ty1">退运</label>
+							</p>
+						<!-- <div class="szicon" code="1001" type="gh"></div>
+						<div class="szss">规划</div>
+						<div class="szicon" code="1002" type="zj"></div>
+						<div class="szss">在建</div>
+						<div class="szicon" code="1003" type="yx"></div>
+						<div class="szss">运行</div>
+						<div class="szicon now" code="1004,1006" type="ty"></div>
+						<div class="szss">退运</div> -->
+					</div>
+					<!--  <div class='shezhi wdztItem'>
 								 <div class='sztitle'>地图设置</div>
 								 <div class='szcirle pm' type="pm"></div>
 								 <div class='szss'>平面图</div>
@@ -321,29 +368,33 @@
 								 <div class='szss'>卫星图</div>
 							 </div> -->
 
-				<div class="shezhi wdztItem" style="margin-bottom: 54px;">
-					<div class="sztitle">图标颜色</div>
-					<div id="bhdydj" class="szcirle" type="dydj"></div>
-					<div class="szss">按电压等级</div>
-					<div id="bhlxsz" class="szcirle now" type="lxsz"></div>
-					<div class="szss">按类型</div>
+					<div class="shezhi wdztItem" style="margin-bottom: 54px;">
+						<div class="sztitle">图标颜色</div>
+						<!-- <div id="bhdydj" class="szcirle" type="dydj"></div>
+						<div class="szss">按电压等级</div>
+						<div id="bhlxsz" class="szcirle now" type="lxsz"></div>
+						<div class="szss">按类型</div> -->
+						<p>
+							<input type="radio" id="bhdydj1" class="magic-radio" name="szcirle1" checked />
+							<label for="bhdydj1">按电压等级</label>
+							<span></span>
+							<input type="radio" id="bhlxsz1" class="magic-radio" name="szcirle1" />
+							<label for="bhlxsz1">按类型</label>
+						</p>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class="setBtn">
+			<div class="setBtn">
 				<span class="confirm">确定</span>
 				<span class="cancel">取消</span>
-	   </div>
-	   </div>
+			</div>
+		</div>
 		<div class='userName'></div>
 		<div class='areaName'>浙江省调</div>
-		<!-- <div class='search'>
-			<div class='searchBtn'></div>
-			<div class='searchLi'></div>
-		</div> -->
 	</div>
 	<div class="content" id="main-area">
 		<div class="left" id="content-left">
+			<div class="bigLocked"></div>
 			<div id="map" class="mapCop"></div>
 			<div class="state-area">
 				<div class="card work-state">
@@ -359,39 +410,39 @@
 		<div class="right" id="content-right">
 			<span class="expend" id="btn-expend"><i></i></span>
 			<div class="tablelist">
-				<div class="filter-area layui-form">
+				<div class="filter-area">
 					<span class="title">数据筛选</span>
 					<div class="left-area">
-					    <table>
+						<table>
 							<tr>
 								<td>
-										<ul>
-												<li><span>停役单位</span><input type="text" placeholder="单位名称" /></li>
-												<li><span>停役时间</span>
-													<select name="city">
-														<option value="">状态</option>
-														<option value="010">北京</option>
-														<option value="021">上海</option>
-														<option value="0571">杭州</option>
-													</select>
-												</li>
-												<li><span>电压等级</span><input type="text" class="layui-input datetime" id="test1"
-														autocomplete="off" placeholder="电压等级" /></li>
-												<li><span>工作性质</span><input type="text" placeholder="单位名称" /></li>
-												<li><span>停役单位</span><input type="text" placeholder="单位名称" /></li>
-												<li><span>停役时间</span><input type="text" placeholder="单位名称" /></li>
-											</ul>
+									<ul>
+										<li><span>停役单位</span><input type="text" placeholder="单位名称" /></li>
+										<li><span>停役时间</span>
+											<select name="city">
+												<option value="">状态</option>
+												<option value="010">北京</option>
+												<option value="021">上海</option>
+												<option value="0571">杭州</option>
+											</select>
+										</li>
+										<li><span>电压等级</span><input type="text" class="layui-input datetime" id="test1"
+												autocomplete="off" placeholder="电压等级" /></li>
+										<li><span>工作性质</span><input type="text" placeholder="单位名称" /></li>
+										<li><span>停役单位</span><input type="text" placeholder="单位名称" /></li>
+										<li><span>停役时间</span><input type="text" placeholder="单位名称" /></li>
+									</ul>
 								</td>
 								<td style="width:100px;vertical-align: top;">
-										<div class="right-area">
-												<span class="btn-drop"></span>
-												<button class="btn-search">查询</button>
-											</div>
+									<div class="right-area">
+										<span class="btn-drop"></span>
+										<button class="btn-search">查询</button>
+									</div>
 								</td>
 							</tr>
 						</table>
-					
-						
+
+
 					</div>
 				</div>
 				<div class="table-area">
@@ -413,13 +464,13 @@
 	</div>
 </body>
 <script type="text/javascript" src="./js/anchors.js"></script>
-<script type="text/javascript" src="./js/gis.con.js"></script>
+<script type="text/javascript" src="./js/gis.ol.js"></script>
 <script type="text/javascript" src="./js/gis.main.js"></script>
 <script type="text/javascript">
 	new GISCON.login();
 	var gis = new GISCON.gis();
 	var dt = new GISCON.dt();
-	new GISCON.menu({
+	new GISCON.page({
 		"dt": dt,
 		"gis": gis
 	});
@@ -455,7 +506,7 @@
 				}
 			},
 			event: {
-				'.item-top': {
+				'.item': {
 					'click': function (e, ele, data) {
 						console.log(322432)
 					}

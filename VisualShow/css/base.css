@@ -7,12 +7,92 @@ html, body {
 	padding: 0;
 	height: 100%;
 	width: 100%;
-	overflow: hidden;
 	user-select: none;
+	position: absolute;
+	min-height: 100%;
+	min-width: 800px;
+	overflow-y: hidden;
+	/* 
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased!important; */
 }
+
 
 ul,li{
 	margin: 0;
     padding: 0;
     list-style: none;
 }
+
+.head {
+    position:absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 40px;
+    background: url(images/others/headbg.png);
+	z-index: 10;
+}
+
+.logo1 {
+	position: absolute;
+    width: 210px;
+    height: 40px;
+	background: url(imgs/logo.png) no-repeat center;
+}
+
+.bottom {
+	position: fixed;
+    bottom: 0;
+    width: 100%;
+	height: 24px;
+	line-height: 24px;
+    background: rgba(86,86,86,0.9);
+    text-align: center;
+    color: #FFF;
+	z-index: 1;
+}
+
+.content {
+	width: 100%;
+	background: #efefefea;
+	position: absolute;
+    top: 40px;
+	bottom: 24px;
+}
+
+/*---滚动条默认显示样式--*/  
+
+::-webkit-scrollbar-thumb{  
+
+	background-color:#a0a0a0;  
+ 
+	height:50px;  
+ 
+	outline-offset:-2px;  
+ 
+	outline:2px solid #fff;  
+ 
+	-webkit-border-radius:4px;  
+ 
+	border: 2px solid #fff;  
+ 
+ }  
+ 
+ /*---滚动条大小--*/  
+ 
+ ::-webkit-scrollbar{  
+	width:6px;  
+	height:8px;  
+ }  
+  
+ /*---滚动框背景样式--*/  
+ 
+ ::-webkit-scrollbar-track-piece{  
+ 
+	background-color:#fff;  
+ 
+	-webkit-border-radius:0;  
+ 
+ }
+ 
